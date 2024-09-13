@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: #f7f3e9;
+    color: #333;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  .hero-section {
+    background-image: url('https://images.unsplash.com/photo-1517849845537-4d257902454a');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    max-width: 90%;
+    width: 600px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #8c6239;
+  }
+  
+  p {
+    font-size: 1.2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #8c6239;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .cta-button:hover {
+    background-color: #6f4f2a;
+  }
+  
+  .content {
+    padding: 40px 20px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 30px 10px;
+    }
+  
+    .cta-button {
+      padding: 8px 16px;
+    }
+  }
+  
+  
