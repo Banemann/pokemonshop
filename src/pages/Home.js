@@ -6,7 +6,7 @@ function Home() {
     <div className="home-page">
       <header className="hero-section">
         <div className="overlay">
-          <h1>Anders' Tømrer- & Malerservice i Skovlunde - Håndværk med Kvalitet og Personlig Service</h1>
+          <h1>Tømrer- & Malerservice i Skovlunde - Håndværk med Kvalitet og Personlig Service</h1>
           <h2>Vi er SkovlundeByg - Din lokale partner til alt inden for tømrer- og malerarbejde. Vi tilbyder skræddersyede løsninger med et personligt præg og mange års erfaring.</h2>
           <p>Med base i Skovlunde har vi hos SkovlundeByg hjulpet lokale kunder med deres bygge- og renoveringsprojekter. Vi specialiserer os i alt fra tømrerarbejde til maleropgaver og leverer altid resultater af højeste kvalitet. 
             Uanset om du har brug for hjælp til renovering af dit hjem, nybyggeri eller blot en frisk omgang maling, er vi her for at gøre dine visioner til virkelighed.</p>

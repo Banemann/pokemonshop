@@ -10,7 +10,13 @@ function Header() {
         <nav className="header-nav">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Home(logo)</Link>
+            </li>
+            <li>
+              <Link to="/omos">Om os</Link>
+            </li>
+            <li>
+              <Link to="/kontakt">Kontakt</Link>
             </li>
           </ul>
         </nav>
