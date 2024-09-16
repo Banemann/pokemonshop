@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <h1 className="header-title">Anders' Tømrer & Malerservice</h1>
+        <h1 className="header-title">SkovlundeByg</h1>
         <nav className="header-nav">
           <ul>
             <li>

@@ -6,10 +6,11 @@ function Home() {
     <div className="home-page">
       <header className="hero-section">
         <div className="overlay">
-          <h1 className='homeh1'>Tømrer- & Malerservice i Skovlunde - Håndværk med Kvalitet og Personlig Service</h1>
-          <h2 className='homeh2'>Vi er SkovlundeByg - Din lokale partner til alt inden for tømrer- og malerarbejde.</h2>
+          <h1 className='homeh1'>Vi er SkovlundeByg <br></br> Din lokale partner til alt inden for tømrer- og malerarbejde.</h1>
+          <h2 className='homeh2'>Håndværk med Kvalitet og Personlig Service</h2>
+          
           <p className='homep'>
-            Med base i Skovlunde har vi hjulpet lokale kunder med deres byggeprojekter. Vi specialiserer os i alt fra tømrerarbejde til maleropgaver og leverer resultater af højeste kvalitet.
+            Med base i Skovlunde har vi hjulpet lokale kunder med deres byggeprojekter. <br></br> Vi specialiserer os i alt fra tømrerarbejde til maleropgaver og leverer resultater af højeste kvalitet.
           </p>
           <a href="/kontakt" className="cta-button" aria-label="Contact us for a quote">
             Kontakt os i dag for et uforpligtende tilbud!
@@ -20,7 +21,7 @@ function Home() {
       
 
       <section className="textcontent">
-        <h2 className='homeh2'>Services</h2>
+        <h2 className='homeh2'>Tømrer- & Malerservice i Skovlunde</h2>
         <h3 className='homeh3'>Vi tilbyder en bred vifte af tømrer- og malerydelser...</h3>
 
         <h4 className='homeh4'>Tømrerarbejde</h4>
@@ -35,7 +36,8 @@ function Home() {
       </section>
       
       <section className="imgcontent">
-        imgcontent
+      <img src="/anders2.jpg" alt="Example" />
+      <img src="/anders3.jpg" alt="Example" />
       </section>
     </div>
   );

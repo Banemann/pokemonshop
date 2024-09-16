@@ -65,6 +65,16 @@ body {
   text-align: center;
   padding: 40px 20px;
   background-color: #eae7dc;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px; 
+  justify-content: center; 
+}
+
+.imgcontent img{
+  max-width: 450px;
+  border-radius: 10px;
 }
 
 .textcontent {
