@@ -1,86 +1,90 @@
 body {
-    margin: 0;
-    font-family: 'Lato', sans-serif;
-    background-color: #f7f3e9;
-    color: #333;
-  }
-  
-  .App {
-    text-align: center;
-  }
-  
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #f7f3e9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.App {
+  text-align: center;
+}
+
+.hero-section {
+  background-image: url(/public/anders1.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.homeh1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.homeh2 {
+  font-size: 1.8rem;
+  color: #8c6239;
+}
+
+.homep {
+  font-size: 1.1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #8c6239;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #6f4f2a;
+}
+
+.imgcontent {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #eae7dc;
+}
+
+.textcontent {
+  padding: 40px 20px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
   .hero-section {
-    background-image: url('https://images.unsplash.com/photo-1517849845537-4d257902454a');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    padding: 30px 10px;
+    height: auto;
   }
-  
-  .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    max-width: 90%;
-    width: 600px;
-  }
-  
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
+
+  .homeh1 {
     font-size: 2rem;
-    color: #8c6239;
   }
-  
-  p {
-    font-size: 1.2rem;
-  }
-  
+
   .cta-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #8c6239;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
+    padding: 8px 16px;
   }
-  
-  .cta-button:hover {
-    background-color: #6f4f2a;
-  }
-  
-  .textcontent {
-    padding: 40px 20px;
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    font-size: 0.8rem;
-  }
-  
-  
-  @media (max-width: 768px) {
-    .hero-section {
-      padding: 30px 10px;
-    }
-  
-    .cta-button {
-      padding: 8px 16px;
-    }
-  }
-  
-  
+}
