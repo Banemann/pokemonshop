@@ -7,7 +7,7 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <div className="header-left">
-          <Link to="/home">
+          <Link to="/">
             <img src="https://picsum.photos/200" alt="SkovlundeByg logo" className="header-logo" />
           </Link>
           <h1 className="header-title">SkovlundeByg</h1>
