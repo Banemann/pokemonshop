@@ -8,7 +8,7 @@ function Home() {
         <div className="overlay">
           <h1 className='homeh1'><span className='underline'>SkovlundeByg</span> <br /> Din lokale partner til alt inden for tømrer- og malerarbejde.</h1>
           <p className='homep'>
-            Med base i Skovlunde har vi hjulpet lokale kunder med deres byggeprojekter. Vi specialiserer os i alt fra tømrerarbejde til maleropgaver og leverer resultater af højeste kvalitet.
+            Med base i Skovlunde har vi hjulpet lokale kunder med deres byggeprojekter. <br/>Vi specialiserer os i alt fra tømrerarbejde til maleropgaver og leverer resultater af højeste kvalitet.
           </p>
           <a href="/kontakt" className="cta-button" aria-label="Contact us for a quote">
             Kontakt os i dag for et uforpligtende tilbud!
