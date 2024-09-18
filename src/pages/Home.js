@@ -19,6 +19,7 @@ function Home() {
       <section className="introcontent">
         <h2 className='homeh2'>Håndværk med Kvalitet og Personlig Service</h2>
         <p className='homep'>Vi leverer håndværk med fokus på detaljer og kundetilfredshed i Skovlunde og omegn.</p>
+        <p>Mere content her?</p>
       </section>
 
       
