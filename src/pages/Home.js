@@ -20,6 +20,7 @@ function Home() {
         <h2 className='homeh2'>Håndværk med Kvalitet og Personlig Service</h2>
         <p className='homep'>Vi leverer håndværk med fokus på detaljer og kundetilfredshed i Skovlunde og omegn.</p>
       </section>
+
       
       <section className="imgcontent">
         <img src="/anders2.jpg" alt="Tømrerarbejde eksempel fra SkovlundeByg" />
