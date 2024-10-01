@@ -43,13 +43,13 @@ span {
 }
 
 .kontakta {
-  color: #2c3e50;
+  color: #3192d3;
   text-decoration: none;
   font-weight: bold;
 }
 
 .kontakta:hover {
-  color: #3498db;
+  text-decoration: underline;
 }
 
 .kontaktform {
@@ -117,13 +117,6 @@ span {
 
 
 
-.map-container {
-  margin-top: 20px;
-  width: 100%;
-  height: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 100px auto;
-}
 
 @media (max-width: 768px) {
   .kontaktform {
@@ -134,7 +127,4 @@ span {
     padding: 16px 24px;
   }
 
-  .map-container {
-    height: 300px;
-  }
 }
