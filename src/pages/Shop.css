@@ -1,19 +1,13 @@
-.shop-page {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 40px 70px;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-  font-family: 'Arial', sans-serif;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.shoph1{
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+    font-size: 5rem;
 }
 
-.Shoph1 {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 700;
-}
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px auto;
+  }
