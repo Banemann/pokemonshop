@@ -42,7 +42,7 @@ const CartSidebar = ({ isOpen, onClose }) => {
     <button onClick={() => handleDecrease(product.id)}>-</button>
     <span>{product.quantity}</span>
     <button onClick={() => handleIncrease(product.id)}>+</button>
-    <button onClick={() => removeFromCart(product.id)} className="remove-btn">Fjern</button> {/* Moved here */}
+    <button onClick={() => removeFromCart(product.id)} className="remove-btn">Fjern</button> 
   </div>
 </div>
 
