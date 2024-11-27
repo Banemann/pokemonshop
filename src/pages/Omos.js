@@ -1,16 +1,6 @@
 import React from 'react';
 import './Omos.css';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-const containerStyle = {
-  width: '100%',
-  height: '400px',
-};
-
-const center = {
-  lat: 55.7308,
-  lng: 12.4066, 
-};
 
 function Omos() {
   return (
@@ -25,13 +15,7 @@ function Omos() {
 
         BILLEDE AF ANDERS HER?
 
-        <div className="map-container">
-        <LoadScript googleMapsApiKey="AIzaSyCMP4bFc7f3vvbXOwg1osq0e992TtzQTC4">
-          <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
-            <Marker position={center} />
-          </GoogleMap>
-        </LoadScript>
-      </div>
+        
 
     </div>
   );
