@@ -1,4 +1,4 @@
-.contact-page {
+.shop-page {
   max-width: 800px;
   margin: 0 auto;
   padding: 40px 70px;
@@ -10,7 +10,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.kontakth1 {
+.Shoph1 {
   font-size: 2.5rem;
   color: #2c3e50;
   text-align: center;
@@ -18,7 +18,7 @@
   font-weight: 700;
 }
 
-.kontakth2 {
+.Shoph2 {
   font-size: 1.6rem;
   color: #34495e;
   margin-bottom: 30px;
@@ -26,13 +26,13 @@
   text-align: left;
 }
 
-.kontaktaddress {
+.Shopaddress {
   font-style: normal;
   text-align: left;
   margin-bottom: 30px;
 }
 
-.kontaktp {
+.Shopp {
   font-size: 1.2rem;
   margin-bottom: 15px;
   color: #555;
@@ -42,17 +42,17 @@ span {
   font-weight: bold;
 }
 
-.kontakta {
+.Shopa {
   color: #3192d3;
   text-decoration: none;
   font-weight: bold;
 }
 
-.kontakta:hover {
+.Shopa:hover {
   text-decoration: underline;
 }
 
-.kontaktform {
+.Shopform {
   display: flex;
   flex-direction: column;
   max-width: 600px;
@@ -64,15 +64,15 @@ span {
   text-align: left;
 }
 
-.kontaktlabel {
+.Shoplabel {
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 600;
   color: #333;
 }
 
-.kontaktinput,
-.kontakttextarea {
+.Shopinput,
+.Shoptextarea {
   width: 95%;
   padding: 14px;
   margin-bottom: 20px;
@@ -82,19 +82,19 @@ span {
   transition: border-color 0.3s ease;
 }
 
-.kontaktinput:focus,
-.kontakttextarea:focus {
+.Shopinput:focus,
+.Shoptextarea:focus {
   border-color: #007bff;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.kontakttextarea {
+.Shoptextarea {
   min-height: 150px;
   resize: vertical;
 }
 
-.kontaktbutton {
+.Shopbutton {
   padding: 14px 20px;
   font-size: 16px;
   background-color: #007bff;
@@ -106,12 +106,12 @@ span {
   text-align: center;
 }
 
-.kontaktbutton:hover {
+.Shopbutton:hover {
   background-color: #0056b3;
 }
 
-.kontaktform input::placeholder,
-.kontaktform textarea::placeholder {
+.Shopform input::placeholder,
+.Shopform textarea::placeholder {
   color: #999;
 }
 
@@ -119,11 +119,11 @@ span {
 
 
 @media (max-width: 768px) {
-  .kontaktform {
+  .Shopform {
     padding: 20px;
   }
 
-  .kontaktbutton {
+  .Shopbutton {
     padding: 16px 24px;
   }
 

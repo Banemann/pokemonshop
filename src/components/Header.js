@@ -19,7 +19,7 @@ function Header() {
               <Link to="/omos">Om os</Link>
             </li>
             <li>
-              <Link to="/kontakt">Kontakt</Link>
+              <Link to="/shop">Shop</Link>
             </li>
           </ul>
         </nav>
