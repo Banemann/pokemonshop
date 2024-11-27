@@ -1,0 +1,46 @@
+/* Cart Sidebar Styles */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Completely off-screen when closed */
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out; /* Smooth transition */
+  padding: 20px;
+  z-index: 9999;
+}
+
+/* When the sidebar is open, it moves to the right (visible) */
+.cart-sidebar.open {
+  right: 0; /* Bring the sidebar into view */
+}
+
+/* Cart Icon Styles */
+.cart-icon {
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  transition: color 0.3s ease;
+  z-index: 1001; /* Ensure it's on top of the sidebar */
+}
+
+.cart-icon:hover {
+  color: #007bff; /* Hover effect */
+}
+
+/* Cart Badge (Number of items in the cart) */
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff6347; /* Cart badge color */
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
+}

@@ -1,31 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import CartSidebar from './CartSidebar';
 import './Header.css';
 
-function Header() {
-  return (
-    <header className="header">
-      <div className="header-container">
-        <div className="header-left">
-          <Link to="/">
-            <img src="https://picsum.photos/200" alt="SkovlundeByg logo" className="header-logo" />
-          </Link>
-          <h1 className="header-title">SkovlundeByg</h1>
-        </div>
+const Header = () => {
+  const { cart } = useCart();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-        <nav className="header-nav">
-          <ul>
-            <li>
-              <Link to="/omos">Om os</Link>
-            </li>
-            <li>
-              <Link to="/shop">Shop</Link>
-            </li>
-          </ul>
-        </nav>
+  const toggleSidebar = () => {
+    setIsSidebarOpen(prevState => !prevState); // Toggle the sidebar visibility
+  };
+
+  return (
+    <header>
+      <Link to="/" className="logo">
+        <img src="logo.png" alt="Logo" />
+        My Store
+      </Link>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/shop">Shop</Link>
+        <Link to="/omos">About</Link>
+      </nav>
+      <div className="cart-icon" onClick={toggleSidebar}>
+        <span>🛒</span>
+        <span className="cart-badge">{cart.length}</span>
       </div>
+      {/* Only pass the 'open' class if the sidebar is open */}
+      <CartSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
     </header>
   );
-}
+};
 
 export default Header;
