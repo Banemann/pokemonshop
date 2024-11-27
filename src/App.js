@@ -20,7 +20,6 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <button onClick={toggleCart}>Open Cart</button>  {/* Button to open/close the cart */}
           <main>
             <Routes>
               <Route path="/" element={<Home />} />

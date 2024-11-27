@@ -2,28 +2,30 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 600px;
+  width: 400px;
+  height: 100%;
   background-color: #fff;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   color: black;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-sidebar.open {
+  transform: translateX(0);
 }
 
 .cart-sidebar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
 }
 
 .cart-sidebar-header h2 {
   margin: 0;
-  color: yellowgreen;
-}
-
-.cart-sidebar.open {
-  transform: translateX(0);
 }
 
 .cart-items {
@@ -31,32 +33,104 @@
   padding: 0;
 }
 
-.cart-items li {
+.cart-item-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f1f1f1;
 }
 
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+/* Cart Sidebar Buttons - Bigger and more visible */
+.quantity-controls button,
+.remove-btn {
+  padding: 10px 15px; /* Bigger padding for easier clicking */
+  font-size: 18px; /* Larger font size for better readability */
+  border-radius: 5px; /* Slightly rounded corners for better clickability */
+  border: 2px solid transparent; /* Adds border for better focus visibility */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  outline: none; /* Removes the default outline on focus */
+}
+
+/* Increase contrast for better visibility */
+.quantity-controls button {
+  background-color: #007bff; /* Blue color for primary buttons */
+  color: white;
+}
+
+.quantity-controls button:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+}
+
+.quantity-controls button:focus {
+  border-color: #0056b3; /* Outline effect when focused */
+  background-color: #0056b3; /* Keep the same color when focused */
+}
+
+/* Remove button - red background with high contrast */
+.remove-btn {
+  background-color: #ff3b30 !important; /* Bright red for better visibility */
+  color: white;
+  margin-left: 15%;
+}
+
+.remove-btn:hover {
+  background-color: #e00 !important; /* Darker red when hovered */
+}
+
+.remove-btn:focus {
+  border-color: #e00 !important; /* Outline effect when focused */
+  background-color: #e00 !important; /* Keep the same color when focused */
+}
+
+/* Add some spacing between buttons */
 .quantity-controls {
   display: flex;
   align-items: center;
-}
-
-.quantity-controls button {
-  padding: 5px 10px;
-  font-size: 16px;
+  gap: 15px; /* Increased space between buttons */
+  margin-top: 10px;
 }
 
 .quantity-controls span {
-  margin: 0 10px;
-  font-size: 16px;
+  font-size: 18px; /* Larger text size for quantity */
+  font-weight: bold;
+  color: #333; /* Darker text for better contrast */
 }
 
-button {
-  cursor: pointer;
+/* Accessible Focus Styles */
+.quantity-controls button:focus,
+.remove-btn:focus {
+  outline: 3px solid #ffa500; /* Orange outline for better focus visibility */
 }
 
-button:hover {
-  background-color: #f1f1f1;
+
+
+
+
+.cart-total {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 18px;
+}
+
+.cart-total .total-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total .total-info span {
+  font-size: 20px;
+  color: #333;
 }

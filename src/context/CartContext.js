@@ -13,9 +13,12 @@ export const CartProvider = ({ children }) => {
       const itemIndex = prevCart.findIndex((item) => item.id === product.id);
 
       if (itemIndex !== -1) {
-        // If item already exists in cart, increase the quantity
+        // If item already exists in cart, increase the quantity by 1
         const updatedCart = [...prevCart];
-        updatedCart[itemIndex].quantity += 1;
+        updatedCart[itemIndex] = { 
+          ...updatedCart[itemIndex], 
+          quantity: updatedCart[itemIndex].quantity + 1 
+        };
         return updatedCart;
       } else {
         // If item doesn't exist, add it with quantity 1
@@ -38,8 +41,11 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  // Calculate total quantity
+  const totalQuantity = cart.reduce((acc, product) => acc + product.quantity, 0);
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider value={{ cart, totalQuantity, addToCart, removeFromCart, updateQuantity }}>
       {children}
     </CartContext.Provider>
   );

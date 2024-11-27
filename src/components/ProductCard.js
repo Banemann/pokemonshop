@@ -14,9 +14,9 @@ const ProductCard = ({ product }) => {
       <img src={product.image} alt={product.cardname} className="product-image" />
       <div className="product-info">
         <h3>{product.cardname}</h3>
-        <p>{`$${product.price.toFixed(2)}`}</p>
+        <p>{`${product.price.toFixed(2)} kr.`}</p>
         <button className="add-to-bag-btn" onClick={handleAddToCart}>
-          Add to Bag
+          Tilføj til kurv
         </button>
       </div>
     </div>

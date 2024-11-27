@@ -5,7 +5,7 @@ import CartSidebar from './CartSidebar';
 import './Header.css';
 
 const Header = () => {
-  const { cart } = useCart();
+  const { totalQuantity } = useCart(); // Extract totalQuantity
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -15,8 +15,7 @@ const Header = () => {
   return (
     <header>
       <Link to="/" className="logo">
-        <img src="logo.png" alt="Logo" />
-        My Store
+        <img src="logo.png" alt="Logo" />       
       </Link>
       <nav>
         <Link to="/">Home</Link>
@@ -25,7 +24,7 @@ const Header = () => {
       </nav>
       <div className="cart-icon" onClick={toggleSidebar}>
         <span>🛒</span>
-        <span className="cart-badge">{cart.length}</span>
+        <span className="cart-badge">{totalQuantity}</span> {/* Use totalQuantity here */}
       </div>
       {/* Only pass the 'open' class if the sidebar is open */}
       <CartSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />

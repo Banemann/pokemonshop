@@ -29,14 +29,14 @@ const Shop = () => {
     };
 
     fetchProducts();
-  }, []);  // Empty dependency array means this effect runs only on component mount
+  }, []);  
 
   if (loading) {
-    return <p>Loading...</p>;  // While loading
+    return <p>Loading...</p>;  
   }
 
   if (error) {
-    return <p>Error: {error}</p>;  // If there's an error
+    return <p>Error: {error}</p>;  
   }
 
   return (
@@ -45,12 +45,15 @@ const Shop = () => {
       <div className="product-list">
         {products.map((product) => (
           <ProductCard
-            key={product.id}  // Use `id` as the key to identify each product card uniquely
+            key={product.id}  
             product={{
               id: product.id,
-              cardname: product.cardname,  // Ensure this matches your column name in Supabase
+              cardname: product.cardname, 
               price: product.price,
-              image: product.image_url,    // Ensure this matches the column for image URL
+              image: product.image_url,   
+              collection: product.collection,    
+              kortbeskrivelse: product.kortbeskrivelse,    
+              beskrivelse: product.beskrivelse,    
             }}
           />
         ))}

@@ -15,6 +15,12 @@ header {
   transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
+/* Add this CSS to avoid content overlapping */
+body {
+  margin-top: 80px; /* Adjust this value according to the height of your header */
+}
+
+/* General Link Styles */
 header a {
   color: white;
   text-decoration: none;
@@ -23,8 +29,9 @@ header a {
   transition: color 0.3s ease;
 }
 
+/* Hover effect on links */
 header a:hover {
-  color: #007bff; /* Hover effect for links */
+  color: #007bff;
 }
 
 /* Logo */
@@ -63,7 +70,7 @@ nav {
 }
 
 .cart-icon:hover {
-  color: #007bff; /* Change color when hovered */
+  color: #007bff;
 }
 
 .cart-icon span {
@@ -75,7 +82,7 @@ nav {
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: #ff6347; /* Red background for cart count */
+  background-color: #ff6347;
   color: white;
   border-radius: 50%;
   padding: 5px 10px;
