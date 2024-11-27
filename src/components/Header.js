@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header>
       <Link to="/" className="logo">
-        <img src="logo.png" alt="Logo" />
+        <img src="https://picsum.photos/100" alt="Logo" />
       </Link>
       <nav>
         <Link to="/">Home</Link>
@@ -38,7 +38,7 @@ const Header = () => {
       </nav>
       <div className={`cart-icon ${isShaking ? 'shake' : ''}`} onClick={toggleSidebar}>
         <span>🛒</span>
-        <span className="cart-badge">{totalQuantity}</span> {/* Use totalQuantity here */}
+        <span className="cart-badge">{totalQuantity}</span> 
       </div>
       <CartSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
     </header>
