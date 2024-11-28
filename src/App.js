@@ -26,11 +26,10 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/omos" element={<Omos />} />
-              <Route path="/product/:productId" element={<ShopSingle />} />  
+              <Route path="/shop/:productId" element={<ShopSingle />} />  
             </Routes>
           </main>
           <Footer />
-          {/* CartSidebar component with isOpen prop */}
           <CartSidebar isOpen={isCartOpen} onClose={toggleCart} />
         </div>
       </Router>

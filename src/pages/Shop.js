@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import supabase from '../supabase';
-import './Shop.css';
+import '../styles/Shop.css';
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filterBy, setFilterBy] = useState(''); // State for filtering by type
-  const [sortBy, setSortBy] = useState(''); // State for sorting by type
 
   // Fetch products from Supabase
   useEffect(() => {
@@ -33,22 +32,11 @@ const Shop = () => {
     fetchProducts();
   }, []);
 
-  // Sort products based on selected criterion (optional)
-  const sortProducts = (products, criterion) => {
-    if (criterion === 'type') {
-      return [...products].sort((a, b) => a.type.localeCompare(b.type)); // Sort by type
-    }
-    return products;
-  };
-
   // Filter products based on selected type
   const filteredProducts = products.filter(product => {
     if (filterBy === '') return true; // Show all if no filter is applied
     return product.type === filterBy; // Filter by the selected type
   });
-
-  // Apply sorting
-  const sortedProducts = sortProducts(filteredProducts, sortBy);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -73,8 +61,9 @@ const Shop = () => {
         </select>
       </div>
 
+      {/* Display the filtered product list */}
       <div className="product-list">
-        {sortedProducts.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard
             key={product.id}
             product={{

@@ -1,0 +1,73 @@
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card a {
+  text-decoration: none;  /* Remove underline from links */
+  color: inherit;  /* Inherit color from the parent */
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.add-to-bag-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-bag-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Stock light indicator styles */
+.stock-indicator {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.stock-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.stock-light.green {
+  background-color: green;
+}
+
+.stock-light.red {
+  background-color: red;
+}
+
+.add-to-bag-btn.out-of-stock {
+  background-color: #007bff; /* Default blue color */
+  color: white;  /* White text */
+  cursor: not-allowed; /* Prevent hover effect */
+}
+
+/* Hover effect for Out of Stock button */
+.add-to-bag-btn.out-of-stock:hover {
+  background-color: #cccccc; /* Grey color on hover */
+  color: #666666;  /* Darker grey text on hover */
+  cursor: not-allowed; /* Keep the button unclickable */
+}

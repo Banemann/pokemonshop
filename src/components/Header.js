@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import CartSidebar from './CartSidebar';
-import './Header.css';
+import '../styles/Header.css';
 
 const Header = () => {
   const { totalQuantity } = useCart(); // Extract totalQuantity

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Omos.css';
+import '../styles/Omos.css';
 
 
 function Omos() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
-import './CartSidebar.css';
+import '../styles/CartSidebar.css';
 
 const CartSidebar = ({ isOpen, onClose }) => {
   const { cart, removeFromCart, updateQuantity, totalQuantity } = useCart();
@@ -37,7 +37,7 @@ const CartSidebar = ({ isOpen, onClose }) => {
                 <div className="cart-item-info">
   <h3>{product.cardname}</h3>
   <p>{product.collection}</p>
-  <p>{`${product.price.toFixed(2)} kr.`}</p>
+  <p>{`${product.price.toFixed()} kr.`}</p>
   <div className="quantity-controls">
     <button onClick={() => handleDecrease(product.id)}>-</button>
     <span>{product.quantity}</span>

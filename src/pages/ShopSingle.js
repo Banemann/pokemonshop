@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';  // Import useNavigate
-import supabase from '../supabase'; // Your database client
-import { useCart } from '../context/CartContext';  // Import your CartContext
-import './ShopSingle.css';
+import { useParams, useNavigate } from 'react-router-dom';
+import supabase from '../supabase';
+import { useCart } from '../context/CartContext';
+import '../styles/ShopSingle.css';
 
 const ShopSingle = () => {
-  const { productId } = useParams();  // Get the product ID from the URL
-  const navigate = useNavigate();  // Initialize useNavigate
-  const { addToCart } = useCart();  // Access addToCart from the CartContext
+  const { productId } = useParams();
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Function to handle adding the product to the cart
   const handleAddToCart = () => {
-    addToCart(product);  // Add the product to the cart
+    addToCart(product);
   };
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const { data, error } = await supabase
-          .from('pokemonshop') // Make sure the table name is correct
+          .from('pokemonshop')
           .select('*')
-          .eq('id', productId)  // Fetch product based on the ID from the URL
-          .single();  // Ensure only one product is returned
+          .eq('id', productId)
+          .single();
 
         if (error) throw error;
 
@@ -44,18 +43,44 @@ const ShopSingle = () => {
 
   return (
     <div className="product-detail">
-      <img src={product.image_url} alt={product.cardname} />
-      <h1>{product.cardname}</h1>
-      <p>{product.collection}</p>
-      <p>{`${product.price.toFixed(2)} kr.`}</p>
-      <p>{product.beskrivelse}</p> {/* Detailed description */}
-      <p>{`${product.lager} Tilbage på lager.`}</p>
-      <button className="add-to-bag-btn" onClick={handleAddToCart}>
-        Tilføj til kurv
-      </button>
+      
+      <div className="product-grid">
+        <div className="image-wrapper">
+          <img src={product.image_url} alt={product.cardname} />
+        </div>
+        <div className="product-info">
+          <h1>{product.cardname}</h1>
+          <p>{product.collection}</p>
+          <p>{product.kortbeskrivelse}</p>
+          <p>{`${product.price.toFixed(2)} kr.`}</p>
+          <div className="stock-indicator">
+            <span className={`stock-light ${product.lager > 0 ? 'green' : 'red'}`}></span>
+            <span>{product.lager > 0 ? 'På lager' : 'Udsolgt'}</span>
+          </div>
+          <button
+            className="add-to-bag-btn"
+            onClick={handleAddToCart}
+            disabled={product.lager <= 0}
+          >
+            Tilføj til kurv
+          </button>
+        </div>
+      </div>
 
-      {/* Tilbage button to go back */}
-      <button className="back-btn" onClick={() => navigate(-1)}>Tilbage</button> {/* Go back one page */}
+      
+      <div className="details-grid">
+        <div className="product-description">
+          <h2>Beskrivelse</h2>
+          <p>{product.beskrivelse}</p>
+        </div>
+        <div className="product-contents">
+          <h2>Indhold</h2>
+          <p>{product.indhold}</p>
+        </div>
+      </div>
+
+     
+      <button className="back-btn" onClick={() => navigate(-1)}>Tilbage</button>
     </div>
   );
 };
