@@ -33,6 +33,10 @@
   gap: 15px;
 }
 
+.product-info h3 {
+  color: red;
+}
+
 .details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; 

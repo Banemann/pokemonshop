@@ -50,7 +50,7 @@ const ShopSingle = () => {
         </div>
         <div className="product-info">
           <h1>{product.cardname}</h1>
-          <p>{product.collection}</p>
+          <h3>{product.collection}</h3>
           <p>{product.kortbeskrivelse}</p>
           <p>{`${product.price.toFixed(2)} kr.`}</p>
           <div className="stock-indicator">
