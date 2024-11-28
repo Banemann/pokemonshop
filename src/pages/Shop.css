@@ -11,3 +11,23 @@
     gap: 16px;
     margin: 20px auto;
   }
+
+  /* Add styles for the filter and sorting dropdowns */
+.filter-controls, .sort-controls {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-controls label, .sort-controls label {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  
+  .filter-controls select, .sort-controls select {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
