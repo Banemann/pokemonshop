@@ -1,3 +1,16 @@
+/* Remove link-like styles from any anchor elements in the product card */
+.product-card a {
+  text-decoration: none;  /* Remove underline */
+  color: inherit;         /* Inherit the color of the parent element */
+}
+
+/* Ensure the text in the product card doesn't look like a link */
+.product-card h3,
+.product-card p {
+  text-decoration: none;  /* Remove any underlining */
+  color: inherit;         /* Inherit color from parent, so it matches the design */
+}
+
 .product-card {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -7,8 +20,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  text-align: center;  /* Center text content */
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .product-card:hover {
@@ -21,24 +35,20 @@
 }
 
 .add-to-bag-btn {
-  background-color: #00438b !important; /* Blue background */
-  color: white; /* White text */
+  background-color: #007bff;
+  color: white; 
   padding: 12px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 10px; /* Space between the description and the button */
+  margin-top: 10px;
   transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+  max-width: 200px;
 }
 
 .add-to-bag-btn:hover {
-  background-color: #0056b3; /* Darker blue when hovered */
-}
-
-.product-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: #0056b3;
 }
