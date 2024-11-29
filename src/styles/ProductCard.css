@@ -1,18 +1,20 @@
 .product-card {
-  
-  padding: 15px;
+  padding: 0;
   margin: 10px;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 0 4px 13px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;  
+  max-width: 295px;
+  max-height: 483px;
+  
 }
 
 .product-info {
   text-align: left;
   width: 100%;
-  margin-left: -45px;
+  margin-left: -35px;
 }
 
 .product-image {
@@ -20,7 +22,7 @@
   height: 248px;    
   object-fit: cover;
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 25px;
 }
 
 .cardcollectionp{
@@ -31,7 +33,7 @@
 .cardnameh3, .cardprice{
   font-size: 16px;
   margin: 10px 0;
-  font-weight: bold;
+
 }
 
 .cardstockspan{
@@ -52,11 +54,11 @@
   cursor: pointer;
   font-size: 16px;
   margin-top: 23px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   transition: background-color 0.3s ease;
   font-size: 20px;
   font-weight: bold;
-  width: 265px;
+  width: 245px;
 }
 
 .add-to-bag-btn:hover {
