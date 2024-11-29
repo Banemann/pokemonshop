@@ -17,15 +17,15 @@ const ProductCard = ({ product }) => {
       <Link to={`/shop/${product.id}`} className="product-card-link">
         <img src={product.image} alt={product.cardname} className="product-image" />
         <div className="product-info">
-          <p>{product.collection}</p>
-          <h3>{product.cardname}</h3>
-          <p>{`${product.price.toFixed()} kr.`}</p>
+          <p className='cardcollectionp'>{product.collection}</p>
+          <h3 className='cardnameh3'>{product.cardname}</h3>
+          <h3 className='cardprice'>{`${product.price.toFixed()} kr.`}</h3>
 
           <div className="stock-indicator">
             <span
               className={`stock-light ${product.lager > 0 ? 'green' : 'red'}`}
             ></span>
-            <span>{product.lager > 0 ? 'På lager' : 'Udsolgt'}</span>
+            <span className='cardstockspan'>{product.lager > 0 ? 'På lager' : 'Udsolgt'}</span>
           </div>
         </div>
       </Link>
