@@ -1,13 +1,12 @@
-.product-detail {
+.product-detail-single {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  
 }
 
-.product-grid {
+.product-grid-single {
   display: grid;
   grid-template-columns: 1fr 1fr; 
   gap: 20px;
@@ -15,59 +14,59 @@
   padding-bottom: 20px; 
 }
 
-.image-wrapper {
+.image-wrapper-single {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.image-wrapper img {
+.image-wrapper-single img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
-.product-info {
+.product-info-single {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.product-info h3 {
+.product-info-single .singleh3 {
   color: red;
 }
 
-.details-grid {
+.details-grid-single {
   display: grid;
   grid-template-columns: 1fr 1fr; 
   gap: 20px;
   position: relative; 
 }
 
-.product-description,
-.product-contents {
+.product-description-single,
+.product-contents-single {
   padding: 20px;
 }
 
-.product-description {
+.product-description-single {
   border-right: 3px solid #ddd; 
 }
 
-.product-contents {
+.product-contents-single {
   padding-left: 20px;
 }
 
-.product-description h2,
-.product-contents h2 {
+.product-description-single h2,
+.product-contents-single h2 {
   margin-bottom: 10px;
 }
 
-.add-to-bag-btn{
+.add-to-bag-btn-single{
   max-width: 200px;
   min-height: 50px;
 }
 
-.back-btn {
+.back-btn-single{
   align-self: center;
   background-color: #f0f0f0;
   color: #333;
@@ -79,31 +78,53 @@
   margin-top: 20px;
 }
 
-.back-btn:hover {
+.back-btn-single:hover {
   background-color: #ddd;
 }
 
-.add-to-bag-btn:disabled {
+.add-to-bag-btn-single:disabled {
   cursor: not-allowed; 
 }
 
 
-.add-to-bag-btn:disabled {
+.add-to-bag-btn-single:disabled {
   background-color: #d0d0d0; 
   color: #b0b0b0; 
 }
 
+/* Stock light indicator styles */
+.stock-indicator-single {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.stock-light-single {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.stock-light-single.green {
+  background-color: green;
+}
+
+.stock-light-single.red {
+  background-color: red;
+}
+
 
 @media screen and (max-width: 1100px) {
-  .product-grid {
+  .product-grid-single {
     grid-template-columns: 1fr; 
   }
   
-  .details-grid {
+  .details-grid-single {
     grid-template-columns: 1fr; 
   }
   
-  .product-description {
+  .product-description-single {
     border-right: none; 
   }
   
@@ -112,7 +133,7 @@
 
 @media screen and (max-width: 600px) {
   
-  .add-to-bag-btn {
+  .add-to-bag-btn-single {
     padding: 10%;
   }
   

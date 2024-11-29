@@ -42,23 +42,23 @@ const ShopSingle = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="product-detail">
+    <div className="product-detail-single">
       
-      <div className="product-grid">
-        <div className="image-wrapper">
+      <div className="product-grid-single">
+        <div className="image-wrapper-single">
           <img src={product.image_url} alt={product.cardname} />
         </div>
-        <div className="product-info">
+        <div className="product-info-single">
           <h1>{product.cardname}</h1>
-          <h3>{product.collection}</h3>
+          <h3 className='singleh3'>{product.collection}</h3>
           <p>{product.kortbeskrivelse}</p>
           <p>{`${product.price.toFixed(2)} kr.`}</p>
-          <div className="stock-indicator">
-            <span className={`stock-light ${product.lager > 0 ? 'green' : 'red'}`}></span>
+          <div className="stock-indicator-single">
+            <span className={`stock-light-single ${product.lager > 0 ? 'green' : 'red'}`}></span>
             <span>{product.lager > 0 ? 'På lager' : 'Udsolgt'}</span>
           </div>
           <button
-            className="add-to-bag-btn"
+            className="add-to-bag-btn-single"
             onClick={handleAddToCart}
             disabled={product.lager <= 0}
           >
@@ -68,19 +68,19 @@ const ShopSingle = () => {
       </div>
 
       
-      <div className="details-grid">
-        <div className="product-description">
+      <div className="details-grid-single">
+        <div className="product-description-single">
           <h2>Beskrivelse</h2>
           <p>{product.beskrivelse}</p>
         </div>
-        <div className="product-contents">
+        <div className="product-contents-single">
           <h2>Indhold</h2>
           <p>{product.indhold}</p>
         </div>
       </div>
 
      
-      <button className="back-btn" onClick={() => navigate(-1)}>Tilbage</button>
+      <button className="back-btn-single" onClick={() => navigate(-1)}>Tilbage</button>
     </div>
   );
 };
