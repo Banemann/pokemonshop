@@ -47,10 +47,8 @@ const Shop = () => {
   }
 
   return (
-    <div>
-      <h1 className="shoph1">Shop</h1>
-
-      {/* Filter by type */}
+    <div className='shoppage'>
+      
       <div className="filter-controls">
         <label htmlFor="filterBy">Filter by type:</label>
         <select id="filterBy" value={filterBy} onChange={(e) => setFilterBy(e.target.value)}>
@@ -61,7 +59,7 @@ const Shop = () => {
         </select>
       </div>
 
-      {/* Display the filtered product list */}
+    
       <div className="product-list">
         {filteredProducts.map((product) => (
           <ProductCard
@@ -80,6 +78,7 @@ const Shop = () => {
           />
         ))}
       </div>
+
     </div>
   );
 };

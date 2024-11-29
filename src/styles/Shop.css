@@ -1,3 +1,12 @@
+.shoppage{
+  background-color: #FFFFFF;
+  margin: 5% 2%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .shoph1{
     text-align: center;
     margin: 20px 0;
@@ -6,13 +15,13 @@
 }
 
 .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-    margin: 20px auto;
-  }
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+  margin: 20px auto;
+}
 
-  /* Add styles for the filter and sorting dropdowns */
+
 .filter-controls, .sort-controls {
     margin-bottom: 20px;
     display: flex;

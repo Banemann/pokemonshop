@@ -22,7 +22,7 @@
 }
 
 .add-to-bag-btn {
-  background-color: #007bff;
+  background-color: #1F2D5C;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -31,6 +31,7 @@
   font-size: 16px;
   margin-top: 10px;
   transition: background-color 0.3s ease;
+  font-size: 20px;
 }
 
 .add-to-bag-btn:hover {
@@ -60,14 +61,9 @@
 }
 
 .add-to-bag-btn.out-of-stock {
-  background-color: #007bff; /* Default blue color */
-  color: white;  /* White text */
-  cursor: not-allowed; /* Prevent hover effect */
+  background-color: #d0d0d0;
+  color: white; 
+  cursor: not-allowed; 
 }
 
-/* Hover effect for Out of Stock button */
-.add-to-bag-btn.out-of-stock:hover {
-  background-color: #cccccc; /* Grey color on hover */
-  color: #666666;  /* Darker grey text on hover */
-  cursor: not-allowed; /* Keep the button unclickable */
-}
+
