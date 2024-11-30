@@ -47,67 +47,66 @@
   margin-right: 15px;
 }
 
-/* Cart Sidebar Buttons - Bigger and more visible */
+
 .quantity-controls button,
 .remove-btn {
-  padding: 10px 15px; /* Bigger padding for easier clicking */
-  font-size: 18px; /* Larger font size for better readability */
-  border-radius: 5px; /* Slightly rounded corners for better clickability */
-  border: 2px solid transparent; /* Adds border for better focus visibility */
+  padding: 10px 15px; 
+  font-size: 18px; 
+  border-radius: 5px; 
+  border: 2px solid transparent; 
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  outline: none; /* Removes the default outline on focus */
+  outline: none; 
 }
 
-/* Increase contrast for better visibility */
+
 .quantity-controls button {
-  background-color: #007bff; /* Blue color for primary buttons */
+  background-color: #007bff; 
   color: white;
 }
 
 .quantity-controls button:hover {
-  background-color: #0056b3; /* Darker blue when hovered */
+  background-color: #0056b3; 
 }
 
 .quantity-controls button:focus {
-  border-color: #0056b3; /* Outline effect when focused */
-  background-color: #0056b3; /* Keep the same color when focused */
+  border-color: #0056b3; 
+  background-color: #0056b3; 
 }
 
-/* Remove button - red background with high contrast */
+
 .remove-btn {
-  background-color: #ff3b30 !important; /* Bright red for better visibility */
+  background-color: #ff3b30 !important; 
   color: white;
   margin-left: 15%;
 }
 
 .remove-btn:hover {
-  background-color: #e00 !important; /* Darker red when hovered */
+  background-color: #e00 !important; 
 }
 
 .remove-btn:focus {
-  border-color: #e00 !important; /* Outline effect when focused */
-  background-color: #e00 !important; /* Keep the same color when focused */
+  border-color: #e00 !important; 
+  background-color: #e00 !important; 
 }
 
-/* Add some spacing between buttons */
+
 .quantity-controls {
   display: flex;
   align-items: center;
-  gap: 15px; /* Increased space between buttons */
+  gap: 15px; 
   margin-top: 10px;
 }
 
 .quantity-controls span {
-  font-size: 18px; /* Larger text size for quantity */
+  font-size: 18px; 
   font-weight: bold;
-  color: #333; /* Darker text for better contrast */
+  color: #333; 
 }
 
-/* Accessible Focus Styles */
 .quantity-controls button:focus,
 .remove-btn:focus {
-  outline: 3px solid #ffa500; /* Orange outline for better focus visibility */
+  outline: 3px solid #ffa500;
 }
 
 
