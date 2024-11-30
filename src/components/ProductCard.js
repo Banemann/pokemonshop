@@ -30,7 +30,6 @@ const ProductCard = ({ product }) => {
         </div>
       </Link>
 
-      {/* Button to add to cart */}
       <button 
         className={buttonClass}
         onClick={handleAddToCart}

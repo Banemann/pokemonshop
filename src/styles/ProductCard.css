@@ -67,7 +67,7 @@
 .stock-indicator {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .stock-light {
@@ -75,6 +75,10 @@
   height: 10px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.cardstockspan{
+  margin-left: -4px;
 }
 
 .stock-light.green {
