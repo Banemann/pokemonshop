@@ -20,7 +20,6 @@
 .product-image {
   width: 177px;       
   height: 248px;    
-  object-fit: cover;
   margin: 0 auto;
   padding-top: 25px;
 }
