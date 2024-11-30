@@ -2,67 +2,145 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import supabase from '../supabase';
 import '../styles/Shop.css';
-
+ 
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [filterBy, setFilterBy] = useState(''); // State for filtering by type
+  const [filterByType, setFilterByType] = useState([]);
+  const [priceRange, setPriceRange] = useState([0, 5000]); 
+  const [inStock, setInStock] = useState(false);
+ 
 
-  // Fetch products from Supabase
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const { data, error } = await supabase
-          .from('pokemonshop')  // Ensure the table name is correct
-          .select('*');         // Select all columns
-
+          .from('pokemonshop') 
+          .select('*'); 
+ 
         if (error) {
-          throw error; // Throw an error if the query fails
+          throw error; 
         }
-
-        setProducts(data);  // Set products if data is successfully fetched
-        setLoading(false);   // Stop loading
+ 
+        setProducts(data); 
+        setLoading(false); 
       } catch (error) {
-        setError(error.message);  // Capture and set error message
+        setError(error.message); 
         setLoading(false);
       }
     };
-
+ 
     fetchProducts();
   }, []);
-
-  // Filter products based on selected type
-  const filteredProducts = products.filter(product => {
-    if (filterBy === '') return true; // Show all if no filter is applied
-    return product.type === filterBy; // Filter by the selected type
+ 
+  
+  const filteredProducts = products.filter((product) => {
+    
+    if (filterByType.length > 0 && !filterByType.includes(product.type)) {
+      return false;
+    }
+    
+    if (product.price < priceRange[0] || product.price > priceRange[1]) {
+      return false;
+    }
+    
+    if (inStock && !product.lager) {
+      return false;
+    }
+    return true;
   });
-
+ 
   if (loading) {
     return <p>Loading...</p>;
   }
-
+ 
   if (error) {
     return <p>Error: {error}</p>;
   }
-
+ 
   return (
-    <div className='shoppage'>
+<div className='shoppage'>
       
-      <div className="filter-controls">
-        <label htmlFor="filterBy">Filter by type:</label>
-        <select id="filterBy" value={filterBy} onChange={(e) => setFilterBy(e.target.value)}>
-          <option value="">All</option>
-          <option value="single">Singles</option>
-          <option value="etb">ETB</option>
-          <option value="booster">Booster</option>
-        </select>
-      </div>
+<div className="filter-panel">
+<h3>Tilgængelighed</h3>
+<div>
+<label>
+<input
+              type="checkbox"
+              checked={inStock}
+              onChange={(e) => setInStock(e.target.checked)}
+            />
+            På lager
+</label>
+</div>
+<hr />
+<h3>Type</h3>
+        {['Booster pakker', 'Booster bokse', 'Blister pakker', 'Build & battle', 'ETB', 'Tins'].map((type) => (
+<div key={type}>
+<label>
+<input
+                type="checkbox"
+                checked={filterByType.includes(type)}
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    setFilterByType([...filterByType, type]);
+                  } else {
+                    setFilterByType(filterByType.filter((t) => t !== type));
+                  }
+                }}
+              />
+              {type}
+</label>
+</div>
+        ))}
+<hr />
 
-    
-      <div className="product-list">
+<h3>Pris</h3>
+<div className="price-slider">
+<div className="price-inputs">
+<input
+      type="number"
+      min="0"
+      max="5000"
+      value={priceRange[0]}
+      onChange={(e) => setPriceRange([+e.target.value, priceRange[1]])}
+      className="price-box"
+    />
+<span>–</span>
+<input
+      type="number"
+      min="0"
+      max="5000"
+      value={priceRange[1]}
+      onChange={(e) => setPriceRange([priceRange[0], +e.target.value])}
+      className="price-box"
+    />
+</div>
+<div className="slider-wrapper">
+<input
+      type="range"
+      min="0"
+      max="5000"
+      value={priceRange[0]}
+      onChange={(e) => setPriceRange([+e.target.value, priceRange[1]])}
+      className="slider"
+    />
+<input
+      type="range"
+      min="0"
+      max="5000"
+      value={priceRange[1]}
+      onChange={(e) => setPriceRange([priceRange[0], +e.target.value])}
+      className="slider"
+    />
+</div>
+</div>
+</div>
+ 
+<div className="product-list">
         {filteredProducts.map((product) => (
-          <ProductCard
+<ProductCard
             key={product.id}
             product={{
               id: product.id,
@@ -77,10 +155,9 @@ const Shop = () => {
             }}
           />
         ))}
-      </div>
-
-    </div>
+</div>
+</div>
   );
 };
-
+ 
 export default Shop;
