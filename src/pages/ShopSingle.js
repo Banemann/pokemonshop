@@ -49,14 +49,11 @@ const ShopSingle = () => {
           <img src={product.image_url} alt={product.cardname} />
         </div>
         <div className="product-info-single">
-          <h1>{product.cardname}</h1>
           <h3 className='singleh3'>{product.collection}</h3>
+          <h1 className='singleh1'>{product.cardname}</h1>
           <p>{product.kortbeskrivelse}</p>
-          <p>{`${product.price.toFixed(2)} kr.`}</p>
-          <div className="stock-indicator-single">
-            <span className={`stock-light-single ${product.lager > 0 ? 'green' : 'red'}`}></span>
-            <span>{product.lager > 0 ? 'På lager' : 'Udsolgt'}</span>
-          </div>
+          <p className='singleprice'>{`${product.price.toFixed(2)} kr.`}</p>
+         
           <button
             className="add-to-bag-btn-single"
             onClick={handleAddToCart}
@@ -74,7 +71,7 @@ const ShopSingle = () => {
           <p>{product.beskrivelse}</p>
         </div>
         <div className="product-contents-single">
-          <h2>Indhold</h2>
+          <h2>Indholder</h2>
           <p>{product.indhold}</p>
         </div>
       </div>
