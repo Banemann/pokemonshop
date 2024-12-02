@@ -1,13 +1,10 @@
-/* Set a global base font for the entire application */
 * {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-/* Optional: Set a fallback font for body text */
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-/* Example of specific font override */
 
 
