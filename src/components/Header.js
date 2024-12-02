@@ -10,7 +10,7 @@ const Header = () => {
   const [isShaking, setIsShaking] = useState(false); // State to control shake animation
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(prevState => !prevState); // Toggle the sidebar visibility
+    setIsSidebarOpen((prevState) => !prevState); // Toggle the sidebar visibility
   };
 
   // Trigger the shake animation
@@ -37,8 +37,8 @@ const Header = () => {
         <Link to="/omos">About</Link>
       </nav>
       <div className={`cart-icon ${isShaking ? 'shake' : ''}`} onClick={toggleSidebar}>
-        <span>🛒</span>
-        <span className="cart-badge">{totalQuantity}</span> 
+        <img src="kurv.png" alt="Cart" />
+        <span className="cart-badge">{totalQuantity}</span>
       </div>
       <CartSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
     </header>

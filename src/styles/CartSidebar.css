@@ -22,9 +22,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 0 15px;
   background-color: #1F2E5C;
   color: white;
+  height: 56px;
 }
 
 .cart-sidebar-header h2 {
@@ -33,13 +34,26 @@
   font-weight: bold;
 }
 
-.cart-sidebar-header .close-btn {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
+.cart-sidebar-header .cart-icon {
   cursor: pointer;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
 }
+
+.cart-sidebar-header .cart-icon .cart-badge {
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  background-color: #E73B2F;
+  color: #FFFFFF;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 10px;
+  transform: translate(50%, -50%);
+}
+
 
 .cart-items-container {
   flex-grow: 1;
@@ -66,7 +80,7 @@
   width: 85px;
   height: 120px;
   margin-right: 15px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .cart-item-info {
@@ -121,15 +135,15 @@
   padding-bottom: 10px;
 }
 
-.free-shipping-bar {
-  padding: 20px;
-  margin-top: -35px;
-}
-
 .free-shipping-bar p {
   font-size: 16px;
   margin-top: -5px;
   text-align: center;
+}
+
+.free-shipping-bar {
+  padding: 20px;
+  margin-top: -35px;
 }
 
 .progress-bar {
