@@ -66,25 +66,25 @@ const Header = () => {
           />
           <div className="hero-info-div">
 
-            <div class="hero-info">
-              <img class="hero-info-icon" alt="" src="fragtikon.png" />
-              <div class="hero-info-p">
-              <p> <strong>Gratis fragt</strong> </p>
-              <p>Når du bestiller for 499 kr.</p>
+            <div className="hero-info">
+              <img className="hero-info-icon" alt="" src="fragtikon.png" />
+              <div className="hero-info-p">
+                <p> <strong>Gratis fragt</strong> </p>
+                <p>Når du bestiller for 499 kr.</p>
               </div>
             </div>
 
-            <div class="hero-info">
-              <img class="hero-info-icon" alt="" src="leveringikon.png" />
-              <div class="hero-info-p">
-              <p> <strong>Hurtig levering</strong> </p>
-              <p>Levering 1-3 hverdage</p>
+            <div className="hero-info">
+              <img className="hero-info-icon" alt="" src="leveringikon.png" />
+              <div className="hero-info-p">
+                <p> <strong>Hurtig levering</strong> </p>
+                <p>Levering 1-3 hverdage</p>
               </div>
             </div>
 
-            <div class="hero-info">
-              <img class="hero-info-icon" alt="" src="stjerneikon.png" />
-              <div class="hero-info-p">
+            <div className="hero-info">
+              <img className="hero-info-icon" alt="" src="stjerneikon.png" />
+              <div className="hero-info-p">
                 <p> <strong>4,0 stjerner</strong> </p>
                 <p>Baseret på +672 anmeldelser </p>
               </div>
