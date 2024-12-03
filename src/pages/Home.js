@@ -1,10 +1,12 @@
 import React from 'react';
+import '../styles/Home.css';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to Our Shop!</h1>
-      <p>Explore our wide range of products.</p> 
+    <div className='homediv'>
+     
+      
+
     </div>
   );
 };
