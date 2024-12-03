@@ -35,9 +35,12 @@ const Header = () => {
             <img src="pokelogo2.png" alt="Logo" />
           </Link>
           <nav>
-            <Link to="/">Home</Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/omos">About</Link>
+            <Link to="/shop">Pokémon serier</Link>
+            <Link to="/shop">Gradede kort</Link>
+            <Link to="/shop">Tilbehør</Link>
+            <Link to="/shop">Figurer & bamser</Link>
+            <Link to="/omos">Om os</Link>
+            <Link to="/">Nyheder</Link>
           </nav>
           <div className="header-icons">
             <div className="login-icon">
@@ -52,8 +55,10 @@ const Header = () => {
         </div>
       </header>
       {isHomePage && (
-        <div className="hero-image">
+        <div className="hero-image-div">
           <img src="/heroimg.webp" alt="hero-header-image" className="hero-header-image" />
+          <div className="hero-info-div">
+          </div>
         </div>
       )}
     </>
