@@ -37,6 +37,16 @@
   margin: 10px 0;
 }
 
+.cardnameh3 {
+  font-size: 18px;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  max-width: 92.5%; 
+}
+
+
 .cardstockspan{
   font-size: 10px;
 }
