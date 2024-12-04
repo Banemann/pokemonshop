@@ -1,6 +1,13 @@
 .homediv{
-    max-width: 100%;
-    height: 1845px;
-    margin: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 889px;
     padding: 0;
+}
+
+.homenyheder{
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+   
 }
