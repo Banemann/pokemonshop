@@ -62,7 +62,7 @@ const Header = () => {
           <div className="header-icons">
   <div className="login-icon">
     <img 
-      src={isHomePage ? "login.png" : "loginblack.png"} 
+      src={isHomePage ? "login.svg" : "loginblack.png"} 
       alt="Login" 
     />
   </div>
