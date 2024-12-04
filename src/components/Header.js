@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import CartSidebar from "./CartSidebar";
 import "../styles/Header.css";
@@ -8,7 +8,9 @@ const Header = () => {
   const { totalQuantity } = useCart();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prevState) => !prevState);
@@ -27,6 +29,15 @@ const Header = () => {
 
   const isHomePage = location.pathname === "/";
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/shop?search=${searchQuery}`);
+  };
+
   return (
     <>
       <header className={isHomePage ? "header-home" : "header"}>
@@ -34,14 +45,17 @@ const Header = () => {
           <Link to="/" className="logo">
             <img src="pokelogo2.png" alt="Logo" />
           </Link>
-          <nav>
-            <Link to="/shop">Pokémon serier</Link>
-            <Link to="/shop">Gradede kort</Link>
-            <Link to="/shop">Tilbehør</Link>
-            <Link to="/shop">Figurer & bamser</Link>
-            <Link to="/omos">Om os</Link>
-            <Link to="/">Nyheder</Link>
-          </nav>
+          <form className="search-bar" onSubmit={handleSearchSubmit}>
+            <button type="submit" className="search-button">
+              <img src="searchicon.png" alt="Search" />
+            </button>
+            <input
+              type="text"
+              placeholder="Søg efter Pokémon kort..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+          </form>
           <div className="header-icons">
             <div className="login-icon">
               <img src="login.png" alt="Login" />
@@ -54,8 +68,16 @@ const Header = () => {
               <span className="cart-badge">{totalQuantity}</span>
             </div>
           </div>
-          <CartSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
         </div>
+        <nav>
+          <Link to="/shop">Pokémon serier</Link>
+          <Link to="/shop">Gradede kort</Link>
+          <Link to="/shop">Tilbehør</Link>
+          <Link to="/shop">Figurer & bamser</Link>
+          <Link to="/omos">Om os</Link>
+          <Link to="/">Nyheder</Link>
+        </nav>
+        <CartSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
       </header>
       {isHomePage && (
         <div className="hero-image-div">
@@ -65,7 +87,6 @@ const Header = () => {
             className="hero-header-image"
           />
           <div className="hero-info-div">
-
             <div className="hero-info">
               <img className="hero-info-icon" alt="" src="fragtikon.png" />
               <div className="hero-info-p">
@@ -73,7 +94,6 @@ const Header = () => {
                 <p>Når du bestiller for 499 kr.</p>
               </div>
             </div>
-
             <div className="hero-info">
               <img className="hero-info-icon" alt="" src="leveringikon.png" />
               <div className="hero-info-p">
@@ -81,7 +101,6 @@ const Header = () => {
                 <p>Levering 1-3 hverdage</p>
               </div>
             </div>
-
             <div className="hero-info">
               <img className="hero-info-icon" alt="" src="stjerneikon.png" />
               <div className="hero-info-p">
@@ -89,7 +108,6 @@ const Header = () => {
                 <p>Baseret på +672 anmeldelser </p>
               </div>
             </div>
-
           </div>
         </div>
       )}
