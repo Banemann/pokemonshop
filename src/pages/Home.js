@@ -21,7 +21,12 @@ const Home = () => {
       </div>
 
       <div className="homeanbefalet">
-        
+
+        <div className="anbefalettext">
+        <h2>Pokémon Shops mest anbefalede køb</h2>
+        <p>Find et bredt udvalg af <strong> populære Pokémon produkter</strong> hos Pokemon Shop, så du kan udvikle din samling.</p> 
+        </div>
+
       </div>
 
     </div>

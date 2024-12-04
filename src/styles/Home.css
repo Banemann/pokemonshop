@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+.homenyheder{
+  max-width: 1158px;
+  margin: 0 auto;
+}
+
 .nyhedertext {
   font-size: 18px;
   color: #1f2d5c;
@@ -17,7 +22,7 @@
 
 .nyhederimagediv {
   display: flex;
-  gap: 30px;
+  gap: 24px;
   margin-bottom: 30px;
   justify-content: center;
 }
@@ -32,4 +37,18 @@
   height: 737px;
   margin: 0 auto;
   margin-top: 80px;
+}
+
+.anbefalettext{
+    max-width: 1158px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #1f2d5c;
+    margin-bottom: 40px;
+}
+
+.anbefalettext h2 {
+  margin-bottom: 30px;
+  padding-top: 49px;
+  font-size: 35px;
 }

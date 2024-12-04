@@ -46,7 +46,7 @@ const Header = () => {
   )}
         <div className="header-container">
           <Link to="/" className="logo">
-            <img src="pokelogo2.png" alt="Logo" />
+            <img src="logo.svg" alt="Logo" />
           </Link>
           <form className="search-bar" onSubmit={handleSearchSubmit}>
             <button type="submit" className="search-button">
