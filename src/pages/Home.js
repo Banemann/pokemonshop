@@ -27,6 +27,10 @@ const Home = () => {
         <p>Find et bredt udvalg af <strong> populære Pokémon produkter</strong> hos Pokemon Shop, så du kan udvikle din samling.</p> 
         </div>
 
+        <div className="cardwheel">
+          
+        </div>
+
       </div>
 
     </div>
