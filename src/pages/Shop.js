@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import supabase from "../supabase";
 import "../styles/Shop.css";
+import { useLocation } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -10,6 +11,7 @@ const Shop = () => {
   const [filterByType, setFilterByType] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 5000]);
   const [inStock, setInStock] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -31,6 +33,10 @@ const Shop = () => {
     fetchProducts();
   }, []);
 
+
+  const searchParams = new URLSearchParams(location.search);
+  const searchQuery = searchParams.get("search") || "";
+
   const filteredProducts = products.filter((product) => {
     if (filterByType.length > 0 && !filterByType.includes(product.type)) {
       return false;
@@ -41,6 +47,9 @@ const Shop = () => {
     }
 
     if (inStock && !product.lager) {
+      return false;
+    }
+    if (searchQuery && !product.cardname.toLowerCase().includes(searchQuery.toLowerCase())) {
       return false;
     }
     return true;
