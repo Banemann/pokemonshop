@@ -43,6 +43,17 @@
   transition: background-color 0.3s ease;
 }
 
+.header-blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 166px;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: blur(99px);
+  z-index: -1; 
+}
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -91,7 +102,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: -1;
+  z-index: -2;
 }
 
 .hero-header-image {

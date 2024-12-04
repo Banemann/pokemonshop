@@ -41,6 +41,9 @@ const Header = () => {
   return (
     <>
       <header className={isHomePage ? "header-home" : "header"}>
+      {isHomePage && (
+    <div className="header-blur-overlay"></div>
+  )}
         <div className="header-container">
           <Link to="/" className="logo">
             <img src="pokelogo2.png" alt="Logo" />
