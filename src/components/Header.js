@@ -72,7 +72,7 @@ const Header = () => {
     onClick={toggleSidebar}
   >
     <img 
-      src={isHomePage ? "kurv.png" : "kurvblack.png"} 
+      src={isHomePage ? "kurv.svg" : "kurvblack.png"} 
       alt="Cart" 
     />
     <span className="cart-badge">{totalQuantity}</span>

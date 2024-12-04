@@ -1,13 +1,35 @@
-.homediv{
-    max-width: 1280px;
-    margin: 0 auto;
-    margin-top: 889px;
-    padding: 0;
+.homediv {
+  margin: 0 auto;
+  margin-top: 889px;
+  padding: 0;
 }
 
-.homenyheder{
-    text-align: left;
-    align-items: center;
-    justify-content: center;
-   
+.nyhedertext {
+  font-size: 18px;
+  color: #1f2d5c;
+  margin-bottom: 40px;
+}
+
+.nyhedertext h1 {
+  font-size: 44px;
+  margin-bottom: 30px;
+}
+
+.nyhederimagediv {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.nyhederimagediv img {
+  box-shadow: 10px 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+.homeanbefalet {
+  box-shadow: 10px 4px 25px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  height: 737px;
+  margin: 0 auto;
+  margin-top: 80px;
 }
