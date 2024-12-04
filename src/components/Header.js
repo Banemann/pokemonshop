@@ -60,17 +60,25 @@ const Header = () => {
             />
           </form>
           <div className="header-icons">
-            <div className="login-icon">
-              <img src="login.png" alt="Login" />
-            </div>
-            <div
-              className={`cart-icon ${isShaking ? "shake" : ""}`}
-              onClick={toggleSidebar}
-            >
-              <img src="kurv.png" alt="Cart" />
-              <span className="cart-badge">{totalQuantity}</span>
-            </div>
-          </div>
+  <div className="login-icon">
+    <img 
+      src={isHomePage ? "login.png" : "loginblack.png"} 
+      alt="Login" 
+    />
+  </div>
+
+  <div
+    className={`cart-icon ${isShaking ? "shake" : ""}`}
+    onClick={toggleSidebar}
+  >
+    <img 
+      src={isHomePage ? "kurv.png" : "kurvblack.png"} 
+      alt="Cart" 
+    />
+    <span className="cart-badge">{totalQuantity}</span>
+  </div>
+</div>
+
         </div>
         <nav>
           <Link to="/shop">Pokémon serier</Link>
