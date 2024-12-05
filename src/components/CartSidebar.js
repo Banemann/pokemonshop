@@ -24,7 +24,7 @@ const CartSidebar = ({ isOpen, onClose }) => {
   };
 
   const total = cart.reduce((acc, product) => acc + product.price * product.quantity, 0);
-  const freeShippingThreshold = 499; // Free shipping threshold
+  const freeShippingThreshold = 499;
   const amountToFreeShipping = Math.max(0, freeShippingThreshold - total);
 
   return (
