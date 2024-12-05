@@ -63,9 +63,39 @@ const Home = () => {
       <div className="spotproductdiv">
         <div className="spotproduct">
 
-          
+          <div className="spotproductimage">
+            <img src="spotproduct.png" alt="spotproduct" />
+          </div>
+
+          <div className="spotproducttext">
+            <h2>Pokémon TCG: Terapagos ex Ultra-Premium Collection</h2>
+            <p>Forudbestil: 22/11/24</p>
+            <p>
+              Med sin glitrende skal af Terastal-energi stråler den legendariske Pokémon Terapagos i sin kraftfulde Stellar Form! Nu kan du tilføje denne mystiske kraft til dine Pokémon TCG-dæk med et foil-promokort med Terapagos ex. 
+            </p>
+            <p>400 kr.</p>
+            <button>Tilføj til kurv</button>
+          </div>
 
         </div>    
+        </div>
+
+      <div className="homectadiv">
+
+        <div className="homecta">
+          <img src="maskot.svg" alt="cta1" />
+          <div className="homectatext">
+          <h2>Hold dig opdateret med Pokémon Shop</h2>
+          <p>Følg med i pack openings, ugens bedste pull og meget 
+            mere direkte på TikTok! blev en del af et samle glad 
+            fællesskab af Pokémon entusiaster!
+          Eller besøg Pokemon Shops fysiske butik på adressen: 
+          <strong> Jernbane Allé 77, st. tv, 2720 Vanløse</strong></p>
+          <button>Besøg TikTok</button>
+          </div>
+          </div>
+
+
         </div>
 
     </div>
