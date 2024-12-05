@@ -15,7 +15,9 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card">
       <Link to={`/shop/${product.id}`} className="product-card-link">
+      <div className='cardimgdiv'>
         <img src={product.image} alt={product.cardname} className="product-image" />
+        </div>
         <div className="product-info">
           <p className='cardcollectionp'>{product.collection}</p>
           <h3 className='cardnameh3'>{product.cardname}</h3>

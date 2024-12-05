@@ -52,3 +52,16 @@
   padding-top: 49px;
   font-size: 35px;
 }
+
+.spotproductdiv {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0;
+}
+
+.spotproduct{
+  height: 710px;
+  width: 1233px;
+  background-color: #1F2D5C;
+  box-shadow: 10px 4px 25px rgba(0, 0, 0, 0.25)
+}
