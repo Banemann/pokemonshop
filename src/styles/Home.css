@@ -1,0 +1,54 @@
+.homediv {
+  margin: 0 auto;
+  margin-top: 889px;
+  padding: 0;
+}
+
+.homenyheder{
+  max-width: 1158px;
+  margin: 0 auto;
+}
+
+.nyhedertext {
+  font-size: 18px;
+  color: #1f2d5c;
+  margin-bottom: 40px;
+}
+
+.nyhedertext h1 {
+  font-size: 44px;
+  margin-bottom: 30px;
+}
+
+.nyhederimagediv {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.nyhederimagediv img {
+  box-shadow: 10px 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+.homeanbefalet {
+  box-shadow: 10px 4px 25px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  height: 737px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.anbefalettext{
+    max-width: 1158px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #1f2d5c;
+    margin-bottom: 40px;
+}
+
+.anbefalettext h2 {
+  margin-bottom: 18px;
+  padding-top: 49px;
+  font-size: 35px;
+}

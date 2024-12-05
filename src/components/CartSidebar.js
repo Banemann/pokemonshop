@@ -32,7 +32,7 @@ const CartSidebar = ({ isOpen, onClose }) => {
       <div className="cart-sidebar-header">
         <h2>Din Kurv</h2>
         <div className="cart-icon" onClick={onClose}>
-        <img src="kurv.png" alt="Cart" />
+        <img src="kurv.svg" alt="Cart" />
           <span className="cart-badge">{totalQuantity}</span>
         </div>
         
