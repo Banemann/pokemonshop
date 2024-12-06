@@ -86,12 +86,30 @@ const Home = () => {
           <img src="maskot.svg" alt="cta1" />
           <div className="homectatext">
           <h2>Hold dig opdateret med Pokémon Shop</h2>
-          <p>Følg med i pack openings, ugens bedste pull og meget 
-            mere direkte på TikTok! blev en del af et samle glad 
-            fællesskab af Pokémon entusiaster!
-          Eller besøg Pokemon Shops fysiske butik på adressen: 
-          <strong> Jernbane Allé 77, st. tv, 2720 Vanløse</strong></p>
-          <button>Besøg TikTok</button>
+          <p>
+  Følg med i pack openings, ugens bedste pull og meget 
+  mere direkte på TikTok! blev en del af et samle glad 
+  fællesskab af Pokémon entusiaster!
+  Eller besøg Pokemon Shops fysiske butik på adressen: <span/>
+  <a 
+    href="https://www.google.com/maps/search/?api=1&query=Jernbane+Allé+77,+st.+tv,+2720+Vanløse" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style={{ textDecoration: 'underline', color: 'inherit' }}
+  >
+    <strong>Jernbane Allé 77, st. tv, 2720 Vanløse</strong>
+  </a>
+</p>
+<a 
+  className="tiktokbtn" 
+  href="https://www.tiktok.com/@pokemonshopdk" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  Besøg TikTok
+  <img src="tiktoklogo.svg" alt="TikTok Logo" />
+</a>
+
           </div>
           </div>
 
