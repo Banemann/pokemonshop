@@ -2,24 +2,44 @@ import React, { useEffect, useState } from "react";
 import supabase from "../supabase";
 import "../styles/Home.css";
 import CardWheel from "../components/CardWheel";
+import { useCart } from "../context/CartContext";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [spotProduct, setSpotProduct] = useState(null); // State for the "spot" product
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    if (spotProduct) {
+      addToCart(spotProduct);
+    }
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data, error } = await supabase.from("pokemonshop").select("*");
+        const { data: allProducts, error: productsError } = await supabase
+          .from("pokemonshop")
+          .select("*");
 
-        if (error) {
-          throw error;
-        }
-        setProducts(data);
+        if (productsError) throw productsError;
+
+        setProducts(allProducts);
+
+        const { data: spotData, error: spotError } = await supabase
+          .from("pokemonshop")
+          .select("*")
+          .eq("type", "spot")
+          .single();
+
+        if (spotError) throw spotError;
+
+        setSpotProduct(spotData);
         setLoading(false);
-      } catch (error) {
-        setError(error.message);
+      } catch (err) {
+        setError(err.message);
         setLoading(false);
       }
     };
@@ -51,7 +71,7 @@ const Home = () => {
         <div className="anbefalettext">
           <h2>Pokémon Shops mest anbefalede køb</h2>
           <p>
-            Find et bredt udvalg af <strong> populære Pokémon produkter</strong> hos Pokemon Shop, så du kan udvikle din samling.
+            Find et bredt udvalg af <strong> populære Pokémon produkter</strong> hos Pokémon Shop, så du kan udvikle din samling.
           </p>
         </div>
 
@@ -60,62 +80,58 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="spotproductdiv">
-        <div className="spotproduct">
+      {spotProduct && (
+  <div className="spotproductdiv">
+    <div className="spotproduct">
+      <div className="spotproductimage">
+        <img src={spotProduct.image_url} alt={spotProduct.cardname} />
+      </div>
+      <div className="spotproducttext">
+        <h2>{spotProduct.cardname}</h2>
+        <p><strong>Forudbestil: 22/11/24</strong></p>
+        <p className="spotkortp">{spotProduct.kortbeskrivelse}</p>
+        <p className="spotproductprice">{`${spotProduct.price.toFixed(2)} kr.`}</p>
+        <button
+          className="add-to-bag-btn-spotproduct"
+          onClick={handleAddToCart}
+          disabled={spotProduct.lager <= 0}
+        >
+          Tilføj til kurv
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
-          <div className="spotproductimage">
-            <img src="spotproduct.png" alt="spotproduct" />
-          </div>
-
-          <div className="spotproducttext">
-            <h2>Pokémon TCG: Terapagos ex Ultra-Premium Collection</h2>
-            <p>Forudbestil: 22/11/24</p>
-            <p>
-              Med sin glitrende skal af Terastal-energi stråler den legendariske Pokémon Terapagos i sin kraftfulde Stellar Form! Nu kan du tilføje denne mystiske kraft til dine Pokémon TCG-dæk med et foil-promokort med Terapagos ex. 
-            </p>
-            <p>400 kr.</p>
-            <button>Tilføj til kurv</button>
-          </div>
-
-        </div>    
-        </div>
 
       <div className="homectadiv">
-
         <div className="homecta">
           <img src="maskot.svg" alt="cta1" />
           <div className="homectatext">
-          <h2>Hold dig opdateret med Pokémon Shop</h2>
-          <p>
-  Følg med i pack openings, ugens bedste pull og meget 
-  mere direkte på TikTok! blev en del af et samle glad 
-  fællesskab af Pokémon entusiaster!
-  Eller besøg Pokemon Shops fysiske butik på adressen: <span/>
-  <a 
-    href="https://www.google.com/maps/search/?api=1&query=Jernbane+Allé+77,+st.+tv,+2720+Vanløse" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    style={{ textDecoration: 'underline', color: 'inherit' }}
-  >
-    <strong>Jernbane Allé 77, st. tv, 2720 Vanløse</strong>
-  </a>
-</p>
-<a 
-  className="tiktokbtn" 
-  href="https://www.tiktok.com/@pokemonshopdk" 
-  target="_blank" 
-  rel="noopener noreferrer"
->
-  Besøg TikTok
-  <img src="tiktoklogo.svg" alt="TikTok Logo" />
-</a>
-
+            <h2>Hold dig opdateret med Pokémon Shop</h2>
+            <p>
+              Følg med i pack openings, ugens bedste pull og meget mere direkte på TikTok! Bliv en del af et samle-glad fællesskab af Pokémon-enthusiaster! Eller besøg Pokémon Shops fysiske butik på adressen:
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Jernbane+Allé+77,+st.+tv,+2720+Vanløse"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "underline", color: "inherit" }}
+              >
+                <strong> Jernbane Allé 77, st. tv, 2720 Vanløse</strong>
+              </a>
+            </p>
+            <a
+              className="tiktokbtn"
+              href="https://www.tiktok.com/@pokemonshopdk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Besøg TikTok
+              <img src="tiktoklogo.svg" alt="TikTok Logo" />
+            </a>
           </div>
-          </div>
-
-
         </div>
-
+      </div>
     </div>
   );
 };

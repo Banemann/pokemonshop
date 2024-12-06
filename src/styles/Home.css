@@ -53,18 +53,80 @@
   font-size: 35px;
 }
 
+
+
+
 .spotproductdiv {
   display: flex;
   justify-content: center;
-  margin: 80px 0;
+  margin: 80px auto;
 }
 
-.spotproduct{
-  height: 710px;
-  width: 1233px;
+.spotproduct {
+  display: flex;
+  align-items: center;
   background-color: #1F2D5C;
-  box-shadow: 10px 4px 25px rgba(0, 0, 0, 0.25)
+  box-shadow: 10px 4px 25px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  max-width: 1233px;
+  height: 710px;
+  gap: 26px;
+  color: white;
 }
+
+.spotproductimage img {
+  width: 100%;
+}
+
+.spotproducttext {
+  flex: 1;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+.spotproducttext h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.spotproducttext p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.spotproducttext .spotkortp {
+  margin-top: 20px;
+}
+
+.spotproducttext strong{
+  color: #E73B2F;
+}
+
+.spotproductprice {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.add-to-bag-btn-spotproduct {
+  background-color: #fff;
+  color: #1f2d5c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 23px;
+  font-weight: bold;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 520px;
+  height: 46px;
+  margin-top: 10px;
+}
+
+
+
+
+
 
 .homectadiv{
   display: flex;
