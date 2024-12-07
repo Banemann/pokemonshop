@@ -46,11 +46,11 @@ const Header = () => {
   )}
         <div className="header-container">
           <Link to="/" className="logo">
-            <img src="logo.svg" alt="Logo" />
+            <img src="/logo.svg" alt="Logo" />
           </Link>
           <form className="search-bar" onSubmit={handleSearchSubmit}>
             <button type="submit" className="search-button">
-              <img src="searchicon.png" alt="Search" />
+              <img src="/searchicon.png" alt="Search" />
             </button>
             <input
               type="text"
@@ -62,7 +62,7 @@ const Header = () => {
           <div className="header-icons">
   <div className="login-icon">
     <img 
-      src={isHomePage ? "login.svg" : "loginblack.svg"} 
+      src={isHomePage ? "/login.svg" : "/loginblack.svg"} 
       alt="Login" 
     />
   </div>
@@ -72,7 +72,7 @@ const Header = () => {
     onClick={toggleSidebar}
   >
     <img 
-      src={isHomePage ? "kurv.svg" : "kurvblack.svg"} 
+      src={isHomePage ? "/kurv.svg" : "/kurvblack.svg"} 
       alt="Cart" 
     />
     <span className="cart-badge">{totalQuantity}</span>
@@ -93,7 +93,7 @@ const Header = () => {
       {isHomePage && (
         <div className="hero-image-div">
           <img
-            src="/heroimg.webp"
+            src="heroimg.webp"
             alt="hero-header-image"
             className="hero-header-image"
           />
