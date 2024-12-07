@@ -3,8 +3,9 @@ import ProductCard from './ProductCard';
 import '../styles/CardWheel.css';
 
 const CardWheel = ({ products }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const cardsToShow = 4;
+  const middleIndex = Math.max(0, Math.floor((products.length - cardsToShow) / 2));
+  const [currentIndex, setCurrentIndex] = useState(middleIndex);
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - cardsToShow, 0));
@@ -19,7 +20,7 @@ const CardWheel = ({ products }) => {
   return (
     <div className="card-wheel-container">
       <button className="arrow left-arrow" onClick={handlePrevClick} disabled={currentIndex === 0}>
-      <img src="arrow1.svg" alt="left arrow" />
+        <img src="arrow1.svg" alt="left arrow" />
       </button>
       <div className="card-wheel">
         {visibleProducts.map((product) => (
