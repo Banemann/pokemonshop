@@ -37,6 +37,10 @@ const Shop = () => {
 
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get("search") || "";
+  const collectionQuery = searchParams.get("collection") || "";
+  const typeQuery = searchParams.get("type") || "";
+  console.log("Type Query:", typeQuery);
+
 
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
@@ -64,6 +68,14 @@ const Shop = () => {
     }
 
     if (searchQuery && !product.cardname.toLowerCase().includes(searchQuery.toLowerCase())) {
+      return false;
+    }
+
+    if (collectionQuery && product.collection !== collectionQuery) {
+      return false;
+    }
+
+    if (typeQuery && product.type !== typeQuery) {
       return false;
     }
 

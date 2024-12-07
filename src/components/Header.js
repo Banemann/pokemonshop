@@ -9,7 +9,7 @@ const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [dropdownTimeout, setDropdownTimeout] = useState(null); // Timeout to control dropdown visibility
+  const [dropdownTimeout, setDropdownTimeout] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
@@ -36,6 +36,10 @@ const Header = () => {
       setIsDropdownOpen(false); 
     }, 100); 
     setDropdownTimeout(timeout); 
+  };
+
+  const handleLinkClick = () => {
+    setIsDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -99,29 +103,29 @@ const Header = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Link to="/PokemonSerier">Pokémon serier</Link>
+            <Link to="/shop">Pokémon serier</Link>
             <div
               className={`dropdown-content ${isDropdownOpen ? "show" : ""}`}
             >
               <h1>Pokemon TCG serier</h1>
               <div className="ddserier">
-                <Link to="/shop/prismatic">
-                  <img src="/prismatic-serie.svg" alt="Prismatic Evolutions" />
-                </Link>
-                <Link to="/shop/surging">
+              <Link to="/shop?collection=Prismatic Evolutions" onClick={handleLinkClick}>
+  <img src="/prismatic-serie.svg" alt="Prismatic Evolutions" />
+</Link>
+<Link to="/shop?collection=Surging Sparks" onClick={handleLinkClick}>
                   <img src="/surging-serie.svg" alt="Surging Sparks" />
                 </Link>
-                <Link to="/shop/stellar">
+                <Link to="/shop?collection=Stellar Crown" onClick={handleLinkClick}>
                   <img src="/stellar-serie.svg" alt="Stellar Crown" />
                 </Link>
               </div>
             </div>
           </div>
-          <Link to="/shop">Gradede kort</Link>
-          <Link to="/shop">Tilbehør</Link>
-          <Link to="/shop">Figurer & bamser</Link>
-          <Link to="/omos">Om os</Link>
-          <Link to="/">Nyheder</Link>
+          <Link to="/shop?type=Gradede kort">Gradede kort</Link>
+          <Link to="/shop?type=Tilbehør">Tilbehør</Link>
+          <Link to="/shop?type=Figurer & bamser">Figurer & bamser</Link>
+          <Link to="/Omos">Om os</Link>
+          <Link to="/Nyheder">Nyheder</Link>
         </nav>
         <CartSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
       </header>
