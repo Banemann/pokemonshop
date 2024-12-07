@@ -79,7 +79,10 @@ const Shop = () => {
   }
 
   return (
+  <div className="shoppagediv">
+    <h1>Pokémon Paldea Evolved</h1>
     <div className="shoppage">
+      
       <div className="filter-panel">
         <h3>Tilgængelighed</h3>
         <div className="lagerlabel">
@@ -96,6 +99,7 @@ const Shop = () => {
         <h3>Type</h3>
         <div className="type-filters">
           {[
+            "Single kort",
             "Booster pakker",
             "Booster bokse",
             "Blister pakker",
@@ -196,6 +200,7 @@ const Shop = () => {
           />
         ))}
       </div>
+    </div>
     </div>
   );
 };

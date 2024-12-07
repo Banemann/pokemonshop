@@ -1,13 +1,53 @@
-
 .omos-page {
-    max-width: 800px;
     margin: 0 auto;
-    padding: 40px 20px;
-    background-color: #f9f9f9; 
-    color: #333;
-    line-height: 1.6;
-    font-family: 'Arial', sans-serif;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 145px;
   }
+
+.omherosection img{
+ width: 100%;
+ height: 45vh;
+  object-fit: cover;
+  object-position: top;
+}
+
+.omherosection h1{
+  max-width: 1200px;
+  text-align: left;
+  margin: 44px auto;
+  font-size: 44px;
+  color: #1f2d5c;
+}
+
+.omvision{
+  display: flex;
+  flex: 1;
+  height: 735px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+  padding-top: 120px;
+  gap: 50px;
+}
+
+.omvisiontext{
+  max-width: 561px;
+  line-height: 1.5;
+  font-size: 18px;
+  color: #1F2E5C;
+}
+
+.omvisiontext h2{
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+.shophours{
+  padding-top: 20px;
+}
+
+.omvision img{
+  height: 399px;
+  width: 569px;
+  object-fit: cover;
+  margin: 50px;
+}
   

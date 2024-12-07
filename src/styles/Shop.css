@@ -1,9 +1,20 @@
+.shoppagediv{
+  margin: 225px auto;
+  margin-bottom: 20px;
+  max-width: 1280px;
+}
+
+.shoppagediv h1{
+  font-size: 44px;
+  color: #1f2d5c;
+}
+
 .shoppage {
   background-color: #ffffff;
   display: grid;
   grid-template-columns: 1fr 4fr;
   max-width: 1280px;
-  margin: 200px auto;
+  margin: 15px auto;
 }
 
 .product-list {
@@ -14,8 +25,8 @@
 }
 
 .filter-panel {
-  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.25);
-  height: 695px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  height: 745px;
   width: 280px;
   margin-top: 30px;
   margin-right: 20px;
