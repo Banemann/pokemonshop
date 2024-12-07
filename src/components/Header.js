@@ -126,13 +126,13 @@ const Header = () => {
             >
               <h1>Pokemon TCG serier</h1>
               <div className="ddserier">
-                <Link to="/shop?collection=Prismatic Evolutions" onClick={handleLinkClick}>
+              <Link to={{ pathname: "/shop", search: "?collection=Prismatic Evolutions" }} state={{ collectionName: "Pokémon Prismatic Evolutions" }} onClick={handleLinkClick}>
                   <img src="/prismatic-serie.svg" alt="Prismatic Evolutions" />
                 </Link>
-                <Link to="/shop?collection=Surging Sparks" onClick={handleLinkClick}>
+                <Link to={{ pathname: "/shop", search: "?collection=Surging Sparks" }} state={{ collectionName: "Pokémon Surging Sparks" }} onClick={handleLinkClick}>
                   <img src="/surging-serie.svg" alt="Surging Sparks" />
                 </Link>
-                <Link to="/shop?collection=Stellar Crown" onClick={handleLinkClick}>
+                <Link to={{ pathname: "/shop", search: "?collection=Stellar Crown" }} state={{ collectionName: "Pokémon Stellar Crown" }} onClick={handleLinkClick}>
                   <img src="/stellar-serie.svg" alt="Stellar Crown" />
                 </Link>
               </div>

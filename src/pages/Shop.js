@@ -11,7 +11,7 @@ const Shop = () => {
   const [filterByType, setFilterByType] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 5000]);
   const [inStock, setInStock] = useState(false);
-  const [searchInput, setSearchInput] = useState(""); // Track search input dynamically
+  const [searchInput, setSearchInput] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -39,8 +39,6 @@ const Shop = () => {
   const searchQuery = searchParams.get("search") || "";
   const collectionQuery = searchParams.get("collection") || "";
   const typeQuery = searchParams.get("type") || "";
-  console.log("Type Query:", typeQuery);
-
 
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
@@ -90,9 +88,11 @@ const Shop = () => {
     return <p>Error: {error}</p>;
   }
 
+  const collectionName = location.state?.collectionName || "Pokémon Paldea Evolved";
+
   return (
   <div className="shoppagediv">
-    <h1>Pokémon Paldea Evolved</h1>
+    <h1>{collectionName}</h1>
     <div className="shoppage">
       
       <div className="filter-panel">
