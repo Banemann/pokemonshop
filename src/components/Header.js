@@ -123,7 +123,7 @@ const Header = () => {
           </div>
           <Link to="/shop?type=Gradede kort">Gradede kort</Link>
           <Link to="/shop?type=Tilbehør">Tilbehør</Link>
-          <Link to="/shop?type=Figurer & bamser">Figurer & bamser</Link>
+          <Link to="/shop?type=Figurer og bamser">Figurer & bamser</Link>
           <Link to="/Omos">Om os</Link>
           <Link to="/Nyheder">Nyheder</Link>
         </nav>
