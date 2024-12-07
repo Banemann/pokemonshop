@@ -1,13 +1,17 @@
 .footer {
-    background-color: #34495e;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
+  background-color: #34495e;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: auto; /* Ensure footer stays at the bottom */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}

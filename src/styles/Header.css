@@ -56,6 +56,31 @@
   text-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
 }
 
+.header .dropdown-toggle {
+  background: none;
+  border: none;
+  color: #1F2D5C;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.header-home .dropdown-toggle{
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 10px;
+  text-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
 .header-blur-overlay {
   position: absolute;
   top: 0;
@@ -107,6 +132,76 @@ nav {
   gap: 34px;
   margin-top: -30px; 
   margin-left: 330px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  opacity: 0; 
+  visibility: hidden; 
+  transition: opacity 0.3s ease, visibility 0s 0.3s; 
+  position: fixed;
+  top: 146px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  gap: 40px;
+  padding: 24px;
+  text-align: center;
+  border: #000 1px solid;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content.show {
+  opacity: 1; 
+  visibility: visible; 
+  transition: opacity 0.3s ease, visibility 0s 0s;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.dropdown-content h1{
+  font-size: 32px;
+  color: #000;
+  font-weight: normal;
+}
+
+.ddserier{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 871px;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content img {
+  width: 267px;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.dropdown-content img:hover {
+  transform: scale(1.05);
+}
+
+.dropdown-toggle:hover {
+  text-decoration: underline 3px solid;
 }
 
 .header-icons {
@@ -217,7 +312,9 @@ header .logo img {
 
 .cart-icon.shake {
   animation: shake 0.5s ease-in-out;
+  will-change: transform;
 }
+
 
 @media (max-width: 768px) {
   header {
@@ -238,5 +335,19 @@ header .logo img {
 
   .cart-icon {
     margin-left: 0;
+  }
+  
+
+  .dropdown-content {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .ddserier {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }

@@ -1,0 +1,36 @@
+.pokemonserier{
+    margin-top: 146px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 40px;
+    padding: 24px;
+    text-align: center;
+    border: #000 1px solid;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 294px;
+}
+
+.ddserier{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 871px;
+  }
+
+.pokemonserier h1{
+    font-size: 32px;
+    color: #000;
+    font-weight: normal;
+    margin-top: -10px;
+  }
+
+  .pokemonserier img {
+    width: 267px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+  }

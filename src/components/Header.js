@@ -8,6 +8,8 @@ const Header = () => {
   const { totalQuantity } = useCart();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [dropdownTimeout, setDropdownTimeout] = useState(null); // Timeout to control dropdown visibility
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
@@ -19,6 +21,21 @@ const Header = () => {
   const triggerShake = () => {
     setIsShaking(true);
     setTimeout(() => setIsShaking(false), 500);
+  };
+
+  
+  const handleMouseEnter = () => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout); 
+    }
+    setIsDropdownOpen(true); 
+  };
+ 
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsDropdownOpen(false); 
+    }, 100); 
+    setDropdownTimeout(timeout); 
   };
 
   useEffect(() => {
@@ -41,9 +58,7 @@ const Header = () => {
   return (
     <>
       <header className={isHomePage ? "header-home" : "header"}>
-      {isHomePage && (
-    <div className="header-blur-overlay"></div>
-  )}
+        {isHomePage && <div className="header-blur-overlay"></div>}
         <div className="header-container">
           <Link to="/" className="logo">
             <img src="/logo.svg" alt="Logo" />
@@ -60,28 +75,48 @@ const Header = () => {
             />
           </form>
           <div className="header-icons">
-  <div className="login-icon">
-    <img 
-      src={isHomePage ? "/login.svg" : "/loginblack.svg"} 
-      alt="Login" 
-    />
-  </div>
-
-  <div
-    className={`cart-icon ${isShaking ? "shake" : ""}`}
-    onClick={toggleSidebar}
-  >
-    <img 
-      src={isHomePage ? "/kurv.svg" : "/kurvblack.svg"} 
-      alt="Cart" 
-    />
-    <span className="cart-badge">{totalQuantity}</span>
-  </div>
-</div>
-
+            <div className="login-icon">
+              <img
+                src={isHomePage ? "/login.svg" : "/loginblack.svg"}
+                alt="Login"
+              />
+            </div>
+            <div
+              className={`cart-icon ${isShaking ? "shake" : ""}`}
+              onClick={toggleSidebar}
+            >
+              <img
+                src={isHomePage ? "/kurv.svg" : "/kurvblack.svg"}
+                alt="Cart"
+              />
+              <span className="cart-badge">{totalQuantity}</span>
+            </div>
+          </div>
         </div>
         <nav>
-          <Link to="/shop">Pokémon serier</Link>
+          <div
+            className="dropdown"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link to="/PokemonSerier">Pokémon serier</Link>
+            <div
+              className={`dropdown-content ${isDropdownOpen ? "show" : ""}`}
+            >
+              <h1>Pokemon TCG serier</h1>
+              <div className="ddserier">
+                <Link to="/shop/prismatic">
+                  <img src="/prismatic-serie.svg" alt="Prismatic Evolutions" />
+                </Link>
+                <Link to="/shop/surging">
+                  <img src="/surging-serie.svg" alt="Surging Sparks" />
+                </Link>
+                <Link to="/shop/stellar">
+                  <img src="/stellar-serie.svg" alt="Stellar Crown" />
+                </Link>
+              </div>
+            </div>
+          </div>
           <Link to="/shop">Gradede kort</Link>
           <Link to="/shop">Tilbehør</Link>
           <Link to="/shop">Figurer & bamser</Link>
@@ -101,21 +136,27 @@ const Header = () => {
             <div className="hero-info">
               <img className="hero-info-icon" alt="" src="fragtikon.png" />
               <div className="hero-info-p">
-                <p> <strong>Gratis fragt</strong> </p>
+                <p>
+                  <strong>Gratis fragt</strong>
+                </p>
                 <p>Når du bestiller for 499 kr.</p>
               </div>
             </div>
             <div className="hero-info">
               <img className="hero-info-icon" alt="" src="leveringikon.png" />
               <div className="hero-info-p">
-                <p> <strong>Hurtig levering</strong> </p>
+                <p>
+                  <strong>Hurtig levering</strong>
+                </p>
                 <p>Levering 1-3 hverdage</p>
               </div>
             </div>
             <div className="hero-info">
               <img className="hero-info-icon" alt="" src="stjerneikon.png" />
               <div className="hero-info-p">
-                <p> <strong>4,0 stjerner</strong> </p>
+                <p>
+                  <strong>4,0 stjerner</strong>
+                </p>
                 <p>Baseret på +672 anmeldelser </p>
               </div>
             </div>
