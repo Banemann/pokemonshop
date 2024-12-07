@@ -3,6 +3,7 @@ import supabase from "../supabase";
 import "../styles/Home.css";
 import CardWheel from "../components/CardWheel";
 import { useCart } from "../context/CartContext";
+import { Link } from 'react-router-dom';  
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -18,34 +19,28 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchData = async () => {
       try {
-        const { data: allProducts, error: productsError } = await supabase
-          .from("pokemonshop")
-          .select("*");
-
-        if (productsError) throw productsError;
-
-        setProducts(allProducts);
-
-        const { data: spotData, error: spotError } = await supabase
-          .from("pokemonshop")
-          .select("*")
-          .eq("type", "spot")
-          .single();
-
-        if (spotError) throw spotError;
-
-        setSpotProduct(spotData);
-        setLoading(false);
+        const [productsResult, spotResult] = await Promise.all([
+          supabase.from("pokemonshop").select("*"),
+          supabase.from("pokemonshop").select("*").eq("type", "spot").single(),
+        ]);
+  
+        if (productsResult.error) throw productsResult.error;
+        if (spotResult.error) throw spotResult.error;
+  
+        setProducts(productsResult.data);
+        setSpotProduct(spotResult.data);
       } catch (err) {
         setError(err.message);
+      } finally {
         setLoading(false);
       }
     };
-
-    fetchProducts();
+  
+    fetchData();
   }, []);
+  
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -82,10 +77,13 @@ const Home = () => {
 
       {spotProduct && (
   <div className="spotproductdiv">
+   
     <div className="spotproduct">
+      <Link to={`/shop/${spotProduct.id}`}> 
       <div className="spotproductimage">
         <img src={spotProduct.image_url} alt={spotProduct.cardname} />
       </div>
+      </Link>
       <div className="spotproducttext">
         <h2>{spotProduct.cardname}</h2>
         <p><strong>Forudbestil: 22/11/24</strong></p>
@@ -100,6 +98,7 @@ const Home = () => {
         </button>
       </div>
     </div>
+    
   </div>
 )}
 
