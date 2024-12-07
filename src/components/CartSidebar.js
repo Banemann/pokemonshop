@@ -43,7 +43,9 @@ const CartSidebar = ({ isOpen, onClose }) => {
       <ul className="cart-items">
         {cart.map((product) => (
           <li key={product.id} className="cart-item-card">
+            <div className='cartimgdiv'>
             <img src={product.image} alt={product.cardname} className="cart-item-image" />
+            </div>
             <div className="cart-item-info">
               <h3 className="cartname">{product.cardname}</h3>
               <p className="cartprice">{`Pris ${product.price.toFixed()},00 kr.`}</p>

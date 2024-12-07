@@ -13,7 +13,10 @@ const ShopSingle = () => {
   const [error, setError] = useState(null);
 
   const handleAddToCart = () => {
-    addToCart(product);
+    addToCart({
+      ...product,
+      image: product.image_url, // Ensure the image property is set correctly
+    });
   };
 
   useEffect(() => {
@@ -52,7 +55,7 @@ const ShopSingle = () => {
           <h3 className='singleh3'>{product.collection}</h3>
           <h1 className='singleh1'>{product.cardname}</h1>
           <p>{product.kortbeskrivelse}</p>
-          <p className='singleprice'>{`${product.price.toFixed(2)} kr.`}</p>
+          <p className='singleprice'>{`${product.price.toFixed(0)} kr.`}</p>
          
           <button
             className="add-to-bag-btn-single"

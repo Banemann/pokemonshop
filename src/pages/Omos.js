@@ -39,7 +39,7 @@ function Omos() {
         <img src="" alt="" />
       </div>
 
-      <TiktokCTA></TiktokCTA>
+      <TiktokCTA/>
       
     </div>
   );

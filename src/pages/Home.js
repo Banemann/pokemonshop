@@ -8,14 +8,17 @@ import TiktokCTA from "../components/TiktokCTA";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [spotProduct, setSpotProduct] = useState(null); // State for the "spot" product
+  const [spotProduct, setSpotProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
     if (spotProduct) {
-      addToCart(spotProduct);
+      addToCart({
+        ...spotProduct,
+        image: spotProduct.image_url,
+      });
     }
   };
 
@@ -89,7 +92,7 @@ const Home = () => {
         <h2>{spotProduct.cardname}</h2>
         <p><strong>Forudbestil: 22/11/24</strong></p>
         <p className="spotkortp">{spotProduct.kortbeskrivelse}</p>
-        <p className="spotproductprice">{`${spotProduct.price.toFixed(2)} kr.`}</p>
+        <p className="spotproductprice">{`${spotProduct.price.toFixed(0)} kr.`}</p>
         <button
           className="add-to-bag-btn-spotproduct"
           onClick={handleAddToCart}
@@ -103,7 +106,7 @@ const Home = () => {
   </div>
 )}
 
-<TiktokCTA></TiktokCTA>
+<TiktokCTA/>
 
     </div>
   );
