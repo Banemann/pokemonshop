@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import supabase from "../supabase";
 import "../styles/Shop.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -11,7 +11,9 @@ const Shop = () => {
   const [filterByType, setFilterByType] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 5000]);
   const [inStock, setInStock] = useState(false);
+  const [searchInput, setSearchInput] = useState(""); // Track search input dynamically
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -33,9 +35,20 @@ const Shop = () => {
     fetchProducts();
   }, []);
 
-
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get("search") || "";
+
+  const handleSearchChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    const params = new URLSearchParams(location.search);
+    params.set("search", searchInput);
+    navigate(`${location.pathname}?${params.toString()}`);
+  };
 
   const filteredProducts = products.filter((product) => {
     if (filterByType.length > 0 && !filterByType.includes(product.type)) {
@@ -49,9 +62,11 @@ const Shop = () => {
     if (inStock && !product.lager) {
       return false;
     }
+
     if (searchQuery && !product.cardname.toLowerCase().includes(searchQuery.toLowerCase())) {
       return false;
     }
+
     return true;
   });
 
@@ -67,7 +82,7 @@ const Shop = () => {
     <div className="shoppage">
       <div className="filter-panel">
         <h3>Tilgængelighed</h3>
-        <div>
+        <div className="lagerlabel">
           <label>
             <input
               type="checkbox"
@@ -79,33 +94,48 @@ const Shop = () => {
         </div>
         <hr />
         <h3>Type</h3>
-        {[
-          "Booster pakker",
-          "Booster bokse",
-          "Blister pakker",
-          "Build & battle",
-          "ETB",
-          "Tins",
-        ].map((type) => (
-          <div key={type}>
-            <label>
-              <input
-                type="checkbox"
-                checked={filterByType.includes(type)}
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    setFilterByType([...filterByType, type]);
-                  } else {
-                    setFilterByType(filterByType.filter((t) => t !== type));
-                  }
-                }}
-              />
-              {type}
-            </label>
-          </div>
-        ))}
-        <hr />
+        <div className="type-filters">
+          {[
+            "Booster pakker",
+            "Booster bokse",
+            "Blister pakker",
+            "Build & battle",
+            "ETB",
+            "Tins",
+          ].map((type) => (
+            <div key={type}>
+              <label>
+                <input className="type-checkbox"
+                  type="checkbox"
+                  checked={filterByType.includes(type)}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setFilterByType([...filterByType, type]);
+                    } else {
+                      setFilterByType(filterByType.filter((t) => t !== type));
+                    }
+                  }}
+                />
+                {type}
+              </label>
+            </div>
+          ))}
+        </div>
 
+        <hr />
+        <form className="filter-search-bar" onSubmit={handleSearchSubmit}>
+          <button type="submit" className="filter-search-button">
+            <img src="searchicon.png" alt="Search" />
+          </button>
+          <input
+            type="text"
+            placeholder="Søg..."
+            value={searchInput}
+            onChange={handleSearchChange}
+          />
+        </form>
+
+        <hr />
         <h3>Pris</h3>
         <div className="price-slider">
           <div className="price-inputs">

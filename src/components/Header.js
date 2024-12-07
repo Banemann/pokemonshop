@@ -54,7 +54,7 @@ const Header = () => {
             </button>
             <input
               type="text"
-              placeholder="Søg efter Pokémon kort..."
+              placeholder="Søg efter Pokémon kort.."
               value={searchQuery}
               onChange={handleSearchChange}
             />
