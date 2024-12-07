@@ -11,6 +11,7 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [dropdownTimeout, setDropdownTimeout] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [scrolled, setScrolled] = useState(false); 
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -23,19 +24,18 @@ const Header = () => {
     setTimeout(() => setIsShaking(false), 500);
   };
 
-  
   const handleMouseEnter = () => {
     if (dropdownTimeout) {
-      clearTimeout(dropdownTimeout); 
+      clearTimeout(dropdownTimeout);
     }
-    setIsDropdownOpen(true); 
+    setIsDropdownOpen(true);
   };
- 
+
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => {
-      setIsDropdownOpen(false); 
-    }, 100); 
-    setDropdownTimeout(timeout); 
+      setIsDropdownOpen(false);
+    }, 80);
+    setDropdownTimeout(timeout);
   };
 
   const handleLinkClick = () => {
@@ -59,9 +59,25 @@ const Header = () => {
     navigate(`/shop?search=${searchQuery}`);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <header className={isHomePage ? "header-home" : "header"}>
+      <header className={isHomePage ? (scrolled ? "header-home scrolled" : "header-home") : "header"}>
         {isHomePage && <div className="header-blur-overlay"></div>}
         <div className="header-container">
           <Link to="/" className="logo">
@@ -79,23 +95,24 @@ const Header = () => {
             />
           </form>
           <div className="header-icons">
-            <div className="login-icon">
-              <img
-                src={isHomePage ? "/login.svg" : "/loginblack.svg"}
-                alt="Login"
-              />
-            </div>
-            <div
-              className={`cart-icon ${isShaking ? "shake" : ""}`}
-              onClick={toggleSidebar}
-            >
-              <img
-                src={isHomePage ? "/kurv.svg" : "/kurvblack.svg"}
-                alt="Cart"
-              />
-              <span className="cart-badge">{totalQuantity}</span>
-            </div>
-          </div>
+  <div className="login-icon">
+    <img
+      src={isHomePage ? (scrolled ? "/loginblack.svg" : "/login.svg") : "/loginblack.svg"}
+      alt="Login"
+    />
+  </div>
+  <div
+    className={`cart-icon ${isShaking ? "shake" : ""}`}
+    onClick={toggleSidebar}
+  >
+    <img
+      src={isHomePage ? (scrolled ? "/kurvblack.svg" : "/kurv.svg") : "/kurvblack.svg"}
+      alt="Cart"
+    />
+    <span className="cart-badge">{totalQuantity}</span>
+  </div>
+</div>
+
         </div>
         <nav>
           <div
@@ -109,10 +126,10 @@ const Header = () => {
             >
               <h1>Pokemon TCG serier</h1>
               <div className="ddserier">
-              <Link to="/shop?collection=Prismatic Evolutions" onClick={handleLinkClick}>
-  <img src="/prismatic-serie.svg" alt="Prismatic Evolutions" />
-</Link>
-<Link to="/shop?collection=Surging Sparks" onClick={handleLinkClick}>
+                <Link to="/shop?collection=Prismatic Evolutions" onClick={handleLinkClick}>
+                  <img src="/prismatic-serie.svg" alt="Prismatic Evolutions" />
+                </Link>
+                <Link to="/shop?collection=Surging Sparks" onClick={handleLinkClick}>
                   <img src="/surging-serie.svg" alt="Surging Sparks" />
                 </Link>
                 <Link to="/shop?collection=Stellar Crown" onClick={handleLinkClick}>
