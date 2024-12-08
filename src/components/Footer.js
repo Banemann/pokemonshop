@@ -4,10 +4,53 @@ import '../styles/Footer.css';
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <p>&copy; 2024 Pokemonshop.dk</p>
-        <p>&#9742; (+45) 29 70 91 94</p> 
-        <p>&#9993; pokemonshop@gmail.com</p> 
+      <div className="footer-section">
+        <h3>Kontakt:</h3>
+        <p>Pokémonshop</p>
+        <p>Jernbane Alle 77, st. tv.</p>
+        <p>2720 Vanløse Danmark</p>
+        <p>CVR-nummer: 40389121</p>
+        <p>Telefonr.: 23105382</p>
+        <p>
+          E-mail: <a href="mailto:LSJ@pokemonshop.dk">LSJ@pokemonshop.dk</a>
+        </p>
+        <div className="social-icons">
+          <a target="_blank"
+          rel="noopener noreferrer" href="https://www.tiktok.com/@pokemonshopdk" aria-label="Facebook">
+            <img src="/facebook.svg" alt="Facebook logo" />
+          </a>
+          <a target="_blank"
+          rel="noopener noreferrer" href="https://www.tiktok.com/@pokemonshopdk" aria-label="Instagram">
+          <img src="/instagram.svg" alt="Instagram logo" />
+          </a>
+          <a target="_blank"
+          rel="noopener noreferrer" href="https://www.tiktok.com/@pokemonshopdk" aria-label="TikTok">
+          <img src="/tiktok.svg" alt="TikTok logo" />
+          </a>
+        </div>
+      </div>
+      <div className="footer-section">
+        <h3>Kundeservice:</h3>
+        <ul>
+          <li><a href="/omos">Åbningstider</a></li>
+          <li><a href="/omos">Om Pokémon Shop</a></li>
+          <li><a href="/omos">Handelsbetingelser</a></li>
+          <li><a href="/omos">Kontakt</a></li>
+        </ul>
+      </div>
+      <div className="footer-section">
+        <h3>Nyhedsbrev:</h3>
+        <p className='nyhedsbrevp'>
+          Vær en af de første til at holde sig opdateret med Pokémon Shops
+          eksklusive tilbud og nye produkter, tilmeld dig nyhedsbrevet i dag.
+        </p>
+        <form>
+          <input type="email" placeholder="E-mail..." />
+          <button type="submit">Tilmeld</button>
+        </form>
+      </div>
+      <div className="footer-logo">
+        <img src="/logo.svg" alt="Pokémon Shop Logo" />
       </div>
     </footer>
   );
