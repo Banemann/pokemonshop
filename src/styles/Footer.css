@@ -27,8 +27,9 @@
   margin: 5px 0;
 }
 
-a, p, li a{
-  color: #ffffffd3;}
+.footer-section a, .footer-section p, .footer-section li a{
+  color: #ffffffd3;
+}
 
 .nyhedsbrevp{
   line-height: 2;
