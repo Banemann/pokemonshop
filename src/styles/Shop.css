@@ -162,8 +162,31 @@ input[type="checkbox"]:checked {
   cursor: pointer;
 }
 
+.filter-panel.open {
+  display: block;
+}
+
+.filter-toggle-button {
+  display: none;
+  margin: 15px auto;
+  width: 40vw;
+  height: 8vh;
+  background-color: #1f2d5c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
 
 @media (max-width: 768px) {
+
+  .filter-panel.closed {
+    display: none;
+  }
+
+  .filter-toggle-button {
+    display: block;
+  }
 
   .shoppage {
     display: flex;
@@ -177,7 +200,7 @@ input[type="checkbox"]:checked {
     margin: 0;
     margin-bottom: 20px;
     padding: 10px 20px;
-    box-shadow: none;
+    
   }
 
   .product-list {

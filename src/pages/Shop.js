@@ -12,6 +12,7 @@ const Shop = () => {
   const [priceRange, setPriceRange] = useState([0, 5000]);
   const [inStock, setInStock] = useState(false);
   const [searchInput, setSearchInput] = useState("");
+  const [isFilterOpen, setIsFilterOpen] = useState(false); 
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -94,8 +95,14 @@ const Shop = () => {
   <div className="shoppagediv">
     <h1>{collectionName}</h1>
     <div className="shoppage">
-      
-      <div className="filter-panel">
+    <button
+          className="filter-toggle-button"
+          onClick={() => setIsFilterOpen((prev) => !prev)}
+        >
+          {isFilterOpen ? "X" : "Sorter og filtrer"}
+        </button>
+
+      <div className={`filter-panel ${isFilterOpen ? "open" : "closed"}`}>
         <h3>Tilgængelighed</h3>
         <div className="lagerlabel">
           <label>

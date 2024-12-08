@@ -145,11 +145,11 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <Link to="/shop?type=Gradede kort">Gradede kort</Link>
-          <Link to="/shop?type=Tilbehør">Tilbehør</Link>
-          <Link to="/shop?type=Figurer og bamser">Figurer & bamser</Link>
-          <Link to="/Omos">Om os</Link>
-          <Link to="/Nyheder">Nyheder</Link>
+          <Link to="/shop?type=Gradede kort" onClick={handleLinkClick}>Gradede kort</Link>
+          <Link to="/shop?type=Tilbehør" onClick={handleLinkClick}>Tilbehør</Link>
+          <Link to="/shop?type=Figurer og bamser" onClick={handleLinkClick}>Figurer & bamser</Link>
+          <Link to="/Omos" onClick={handleLinkClick}>Om os</Link>
+          <Link to="/Nyheder" onClick={handleLinkClick}>Nyheder</Link>
         </nav>
         <CartSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
       </header>
