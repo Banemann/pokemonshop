@@ -179,7 +179,7 @@ nav {
   visibility: hidden; 
   transition: opacity 0.3s ease, visibility 0s 0.3s; 
   position: fixed;
-  top: 146px;
+  top: 145px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
