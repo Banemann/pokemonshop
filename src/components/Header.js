@@ -14,6 +14,11 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false); 
   const location = useLocation();
   const navigate = useNavigate();
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+
+  const toggleBurgerMenu = () => {
+    setIsBurgerOpen(!isBurgerOpen);
+  };
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prevState) => !prevState);
@@ -95,38 +100,39 @@ const Header = () => {
             />
           </form>
           <div className="header-icons">
-  <div className="login-icon">
-    <img
-      src={isHomePage ? (scrolled ? "/loginblack.svg" : "/login.svg") : "/loginblack.svg"}
-      alt="Login"
-    />
-  </div>
-  <div
-    className={`cart-icon ${isShaking ? "shake" : ""}`}
-    onClick={toggleSidebar}
-  >
-    <img
-      src={isHomePage ? (scrolled ? "/kurvblack.svg" : "/kurv.svg") : "/kurvblack.svg"}
-      alt="Cart"
-    />
-    <span className="cart-badge">{totalQuantity}</span>
-  </div>
-</div>
-
+            <div className="login-icon">
+              <img
+                src={isHomePage ? (scrolled ? "/loginblack.svg" : "/login.svg") : "/loginblack.svg"}
+                alt="Login"
+              />
+            </div>
+            <div
+              className={`cart-icon ${isShaking ? "shake" : ""}`}
+              onClick={toggleSidebar}
+            >
+              <img
+                src={isHomePage ? (scrolled ? "/kurvblack.svg" : "/kurv.svg") : "/kurvblack.svg"}
+                alt="Cart"
+              />
+              <span className="cart-badge">{totalQuantity}</span>
+            </div>
+            <div className="burger-menu" onClick={toggleBurgerMenu}>
+              <img src={isBurgerOpen ? "/burgericonopen.svg" : "/burgericonclosed.svg"} alt="Menu" />
+            </div>
+          </div>
         </div>
-        <nav>
+
+        <nav className={isBurgerOpen ? "nav open" : "nav"}>
           <div
             className="dropdown"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <Link to="/shop">Pokémon serier</Link>
-            <div
-              className={`dropdown-content ${isDropdownOpen ? "show" : ""}`}
-            >
+            <div className={`dropdown-content ${isDropdownOpen ? "show" : ""}`}>
               <h1>Pokemon TCG serier</h1>
               <div className="ddserier">
-              <Link to={{ pathname: "/shop", search: "?collection=Prismatic Evolutions" }} state={{ collectionName: "Pokémon Prismatic Evolutions" }} onClick={handleLinkClick}>
+                <Link to={{ pathname: "/shop", search: "?collection=Prismatic Evolutions" }} state={{ collectionName: "Pokémon Prismatic Evolutions" }} onClick={handleLinkClick}>
                   <img src="/prismatic-serie.svg" alt="Prismatic Evolutions" />
                 </Link>
                 <Link to={{ pathname: "/shop", search: "?collection=Surging Sparks" }} state={{ collectionName: "Pokémon Surging Sparks" }} onClick={handleLinkClick}>
