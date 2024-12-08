@@ -466,8 +466,6 @@ header .logo img {
   }
 }
 
-
-
 @media (max-width: 1024px) {
   .header-container {
     flex-wrap: wrap;
@@ -493,7 +491,6 @@ header .logo img {
   }
 }
 
-
 @media (min-width: 1025px) {
   .header-container {
     flex-direction: row;
@@ -514,7 +511,6 @@ header .logo img {
     width: 677px;
   }
 }
-
 
 @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
   .header, nav a, .search-bar input {

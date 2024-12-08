@@ -61,7 +61,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 1) {
+      if (window.scrollY > 0) {
         setScrolled(true);
       } else {
         setScrolled(false);
