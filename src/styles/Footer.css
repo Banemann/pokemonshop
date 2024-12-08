@@ -102,3 +102,10 @@ form button:hover {
 p a{
   color: #fff;
 }
+
+
+@media (max-width: 1200px) {
+  .footer {
+    display: none;
+  }
+}
