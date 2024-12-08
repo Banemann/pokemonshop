@@ -60,7 +60,7 @@ const CartSidebar = ({ isOpen, onClose }) => {
       </ul>
       <div className="free-shipping-bar">
               {total >= freeShippingThreshold ? (
-                <p><strong>Gratis fragt opnået!</strong></p>
+                <p>Du har opnået <strong>gratis fragt!</strong></p>
               ) : (
                 <p>Køb for <strong>{amountToFreeShipping} kr.</strong> og få <strong>gratis fragt</strong></p>
               )}
