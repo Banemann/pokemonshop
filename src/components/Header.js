@@ -59,12 +59,17 @@ const Header = () => {
     navigate(`/shop?search=${searchQuery}`);
   };
 
+  const isMobile = () => window.innerWidth <= 768;
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 1) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (!isMobile()) {
+        
+        if (window.scrollY > 1) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
       }
     };
 
