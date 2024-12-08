@@ -132,4 +132,106 @@
   }
 }
 
+@media (max-width: 768px) {
+  .homediv {
+    margin-top: 10vh;
+    padding: 0 20px;
+  }
+
+  .homenyheder {
+    text-align: center;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .nyhedertext h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .nyhedertext p {
+    font-size: 16px;
+  }
+
+  .nyhederimagediv {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nyhederimagediv img {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .homeanbefalet {
+    box-shadow: none;
+    margin-top: 40px;
+    padding: 20px;
+    height: auto;
+  }
+
+  .anbefalettext {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .anbefalettext h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .spotproductdiv {
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
+  .spotproduct {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .spotproductimage img {
+    width: 100%;
+  }
+
+  .spotproducttext {
+    margin-top: 10px;
+  }
+
+  .spotproducttext h2 {
+    font-size: 20px;
+  }
+
+  .spotproducttext p {
+    font-size: 14px;
+  }
+
+  .add-to-bag-btn-spotproduct {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nyhedertext h1 {
+    font-size: 24px;
+  }
+
+  .anbefalettext h2 {
+    font-size: 20px;
+  }
+
+  .spotproducttext p {
+    font-size: 12px;
+  }
+
+  .add-to-bag-btn-spotproduct {
+    font-size: 14px;
+  }
+}
+
+
 
