@@ -45,6 +45,7 @@ const Header = () => {
 
   const handleLinkClick = () => {
     setIsDropdownOpen(false);
+    setIsBurgerOpen(false);
   };
 
   useEffect(() => {
