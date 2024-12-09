@@ -162,7 +162,7 @@ const Header = () => {
           />
           <div className="hero-info-div">
             <div className="hero-info">
-              <img className="hero-info-icon" alt="" src="fragtikon.png" />
+              <img className="hero-info-icon" alt="" src="fragtikon.svg" />
               <div className="hero-info-p">
                 <p>
                   <strong>Gratis fragt</strong>
@@ -171,7 +171,7 @@ const Header = () => {
               </div>
             </div>
             <div className="hero-info">
-              <img className="hero-info-icon" alt="" src="leveringikon.png" />
+              <img className="hero-info-icon" alt="" src="leveringikon.svg" />
               <div className="hero-info-p">
                 <p>
                   <strong>Hurtig levering</strong>
@@ -180,7 +180,7 @@ const Header = () => {
               </div>
             </div>
             <div className="hero-info">
-              <img className="hero-info-icon" alt="" src="stjerneikon.png" />
+              <img className="hero-info-icon" alt="" src="stjerneikon.svg" />
               <div className="hero-info-p">
                 <p>
                   <strong>4,0 stjerner</strong>
