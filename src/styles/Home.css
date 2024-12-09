@@ -29,6 +29,7 @@
 
 .nyhederimagediv img {
   box-shadow: 10px 4px 25px rgba(0, 0, 0, 0.25);
+  max-width: 100%;
 }
 
 .homeanbefalet {
@@ -52,9 +53,6 @@
   padding-top: 49px;
   font-size: 35px;
 }
-
-
-
 
 .spotproductdiv {
   display: flex;
@@ -126,15 +124,10 @@
 
 
 
-@media (min-height: 1200px) {
-  .homediv {
-    margin-top: 93vh;
-  }
-}
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .homediv {
-    margin-top: 10vh;
+    margin-top: 16vh;
     padding: 0 20px;
   }
 
@@ -156,10 +149,11 @@
   .nyhederimagediv {
     flex-direction: column;
     gap: 10px;
+    margin: 0 auto;
   }
 
   .nyhederimagediv img {
-    width: 100%;
+    width: 90%;
     box-shadow: none;
   }
 
