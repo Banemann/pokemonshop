@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../supabase";
+import LazyLoad from "react-lazyload";
 import "../styles/Nyheder.css";
 
 const Nyheder = () => {
@@ -33,10 +34,12 @@ const Nyheder = () => {
       <h1>Nyheder</h1>
       <div className="news-list">
         {news.map((item) => (
-          <div key={item.id} className="news-item">
+          <LazyLoad key={item.id} height={200} offset={100} once>
+          <div className="news-item">
             <h2>{item.cardname}</h2>
             <p>{item.kortbeskrivelse}</p>
           </div>
+        </LazyLoad>
         ))}
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LazyLoad from 'react-lazyload';
 import ProductCard from './ProductCard';
 import '../styles/CardWheel.css';
 
@@ -24,13 +25,14 @@ const CardWheel = ({ products }) => {
       </button>
       <div className="card-wheel">
         {visibleProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={{
-              ...product,
-              image: product.image_url,
-            }}
-          />
+          <LazyLoad key={product.id} height={483} offset={100} once>
+            <ProductCard
+              product={{
+                ...product,
+                image: product.image_url,
+              }}
+            />
+          </LazyLoad>
         ))}
       </div>
       <button className="arrow right-arrow" onClick={handleNextClick} disabled={currentIndex >= products.length - cardsToShow}>

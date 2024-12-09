@@ -3,6 +3,7 @@ import ProductCard from "../components/ProductCard";
 import supabase from "../supabase";
 import "../styles/Shop.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import LazyLoad from "react-lazyload";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -202,23 +203,29 @@ const Shop = () => {
       </div>
 
       <div className="product-list">
-        {filteredProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={{
-              id: product.id,
-              cardname: product.cardname,
-              price: product.price,
-              image: product.image_url,
-              collection: product.collection,
-              kortbeskrivelse: product.kortbeskrivelse,
-              beskrivelse: product.beskrivelse,
-              type: product.type,
-              lager: product.lager,
-            }}
-          />
-        ))}
-      </div>
+          {filteredProducts.map((product) => (
+            <LazyLoad
+              key={product.id}
+              height={483}
+              offset={100}
+              placeholder={<p>Loading...</p>}
+            >
+              <ProductCard
+                product={{
+                  id: product.id,
+                  cardname: product.cardname,
+                  price: product.price,
+                  image: product.image_url,
+                  collection: product.collection,
+                  kortbeskrivelse: product.kortbeskrivelse,
+                  beskrivelse: product.beskrivelse,
+                  type: product.type,
+                  lager: product.lager,
+                }}
+              />
+            </LazyLoad>
+          ))}
+        </div>
     </div>
     </div>
   );
