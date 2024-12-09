@@ -117,19 +117,31 @@ const Header = () => {
               />
               <span className="cart-badge">{totalQuantity}</span>
             </div>
-            <div className="burger-menu" onClick={toggleBurgerMenu}>
+            <div className="burger-menu" onClick={toggleBurgerMenu} aria-expanded={isBurgerOpen}>
               <img src={isBurgerOpen ? "/burgericonopen.svg" : "/burgericonclosed.svg"} alt="Menu" />
             </div>
           </div>
         </div>
 
         <nav className={isBurgerOpen ? "nav open" : "nav"}>
+        
           <div
             className="dropdown"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Link to="/shop">Pokémon serier</Link>
+            <form className="search-bar-mobile" onSubmit={handleSearchSubmit}>
+            <button type="submit" className="search-button">
+              <img src="/searchicon.png" alt="Search" />
+            </button>
+            <input
+              type="text"
+              placeholder="Søg efter Pokémon kort.."
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+          </form>
+            <Link className="seriera" to="/shop">Pokémon serier</Link>
             <div className={`dropdown-content ${isDropdownOpen ? "show" : ""}`}>
               <h1>Pokemon TCG serier</h1>
               <div className="ddserier">
