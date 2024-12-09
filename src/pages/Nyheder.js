@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../supabase";
 import LazyLoad from "react-lazyload";
+import { Link } from "react-router-dom";
 import "../styles/Nyheder.css";
 
 const Nyheder = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -34,12 +36,12 @@ const Nyheder = () => {
       <h1>Nyheder</h1>
       <div className="news-list">
         {news.map((item) => (
-          <LazyLoad key={item.id} height={200} offset={100} once>
+          <LazyLoad key={item.id} height={124} offset={100} once><Link to={`/shop/${item.id}`} className="">
           <div className="news-item">
             <h2>{item.cardname}</h2>
             <p>{item.kortbeskrivelse}</p>
           </div>
-        </LazyLoad>
+          </Link></LazyLoad>
         ))}
       </div>
     </div>
