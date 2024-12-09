@@ -571,15 +571,11 @@ header .logo img {
     margin: 0 auto;
   }
 
-  
-
   .nav a{
     font-size: 18px;
     font-weight: bold;
     white-space: nowrap;
   }
-
-
 }
 
 
@@ -590,3 +586,23 @@ header .logo img {
     border: 1px solid #000;
   }
 }
+
+@media (max-width: 430px) {
+   a.logo img{
+    margin: 0;
+    margin-left: -40px;
+    margin-right: 20px;
+    padding: 0;
+    width: 30vw!important;
+  }
+
+  .header-icons {
+    gap: 20px; 
+  }
+  }  
+
+  
+
+
+
+
