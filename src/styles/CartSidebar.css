@@ -202,6 +202,16 @@
   height: 56px;
 }
 
+.checkout-btn:hover {
+  transform: scaleY(1.05);
+}
+
+.checkout-btn:active {
+  background-color: #fff;
+  border: 1px solid #1F2E5C;
+  color: #1F2E5C;
+}
+
 .checkout-note {
   font-size: 14px;
   color: #555;
@@ -272,9 +282,16 @@
     width: 100%; 
   }
 
+  .cart-total {
+    display: flex;
+    flex-direction: column;
+  }
+
   .checkout-btn {
-    width: 100%; 
+    width: 331px;
+    height: 55px;
     font-size: 18px; 
+    margin: 0 auto;
   }
 
   .checkout-note {

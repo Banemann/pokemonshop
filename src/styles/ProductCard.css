@@ -86,7 +86,13 @@
 }
 
 .add-to-bag-btn:hover {
-  transform: scale(1.025);
+    transform: scaleY(1.09);
+}
+
+.add-to-bag-btn:active {
+  background-color: #fff;
+border: 1px solid #1f2d5c;
+color: #1f2d5c;
 }
 
 .stock-indicator {
