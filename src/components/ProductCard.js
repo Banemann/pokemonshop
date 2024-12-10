@@ -15,8 +15,8 @@ const ProductCard = ({ product }) => {
     const deltaX = e.clientX - centerX;
     const deltaY = e.clientY - centerY;
 
-    const rotateX = Math.min(Math.max(-deltaY / 20, -15), 15);
-    const rotateY = Math.min(Math.max(deltaX / 20, -15), 15); 
+    const rotateX = Math.min(Math.max(-deltaY / 10, -30), 30);
+    const rotateY = Math.min(Math.max(deltaX / 10, -30), 30);
 
     setRotation({ x: rotateX, y: rotateY });
     setIsHovered(true);

@@ -232,14 +232,23 @@
     width: 100%;
   }
 
+  .cart-items {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+
   li.cart-item-card {
-    width: 100vw;
-    padding: 0 5%;
-    padding-bottom: 3%;
+    width: 98%;
+    margin-left: 2%;
   }
 
   .cart-item-info {
-    width: 100%; 
+    max-width: 60%; 
   }
 
   .cart-item-info h3 {
@@ -280,7 +289,7 @@
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
 .cart-sidebar .cart-icon img {
   content: url(/public/kurv.svg) !important;
 }}
