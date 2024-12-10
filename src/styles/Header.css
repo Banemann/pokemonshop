@@ -364,6 +364,7 @@ header .logo img {
   .hero-image-div{
     display: none;
   }
+
   .burger-menu {
     cursor: pointer;
     display: block;
@@ -377,7 +378,7 @@ header .logo img {
   }
 
   .dropdown-content.show{
-    margin-top: 155px;
+    margin-top: 91px;
     width: 101%;
   }
 
