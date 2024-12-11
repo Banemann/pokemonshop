@@ -114,24 +114,9 @@
     align-items: center;
   }
 
-  .card-wheel {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; 
-  }
-
   .card-wheel .product-card {
     min-width: 200px; 
-  }
-
-  .left-arrow,
-  .right-arrow {
-    display: none; 
-  }
-
-
- 
+  } 
 }
 
 @media (max-width: 480px) {
@@ -141,6 +126,21 @@
 
   .card-wheel .product-card {
     min-width: 180px;
+  }
+
+}
+
+@media (max-width: 1400px) {
+  .left-arrow,
+  .right-arrow {
+    display: none; 
+  }
+
+  .card-wheel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
   }
 
 }
