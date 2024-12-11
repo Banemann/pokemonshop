@@ -84,6 +84,35 @@ const Header = () => {
   return (
     <>
       <header className={isHomePage ? (scrolled ? "header-home scrolled" : "header-home") : "header"}>
+      <div className="hero-info-div-mobile">
+            <div className="hero-info-mobile">
+              <img className="hero-info-icon-mobile" alt="" src="fragtikon.svg" />
+              <div className="hero-info-p-mobile">
+                <p>
+                  <strong>Gratis fragt</strong>
+                </p>
+                <p>Når du bestiller for 499 kr.</p>
+              </div>
+            </div>
+            <div className="hero-info-mobile">
+              <img className="hero-info-icon-mobile" alt="" src="leveringikon.svg" />
+              <div className="hero-info-p-mobile">
+                <p>
+                  <strong>Hurtig levering</strong>
+                </p>
+                <p>Levering 1-3 hverdage</p>
+              </div>
+            </div>
+            <div className="hero-info-mobile">
+              <img className="hero-info-icon-mobile" alt="" src="stjerneikon.svg" />
+              <div className="hero-info-p-mobile">
+                <p>
+                  <strong>4,0 stjerner</strong>
+                </p>
+                <p>Baseret på +672 anmeldelser </p>
+              </div>
+            </div>
+          </div>
         {isHomePage && <div className="header-blur-overlay"></div>}
         <div className="header-container">
           <Link to="/" className="logo">
