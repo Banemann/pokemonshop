@@ -56,8 +56,13 @@
   margin: 10px 0;
   white-space: nowrap;
   overflow: hidden; 
-  text-overflow: elpsis; 
-  max-width: 92.5%; 
+  text-overflow: ellipsis; 
+  max-width: 90%; 
+}
+
+.cardnameh3:hover {
+  overflow: visible; 
+  white-space: normal;  
 }
 
 .cardstockspan{
