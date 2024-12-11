@@ -81,17 +81,31 @@
   .card-wheel-container {
     max-width: 100%;
     padding: 0 20px;
-  }
-
-  .card-wheel {
-    width: 100%;
-    gap: 8px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .card-wheel .product-card {
     min-width: 240px; 
   }
 
+  .card-wheel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
+    width: 100%;
+    gap: 8px;
+  }
+
+  .card-wheel .product-card {
+    min-width: 200px; 
+  }
+
+  .left-arrow,
+  .right-arrow {
+    display: none; 
+  }
 }
 
 @media (max-width: 768px) {
