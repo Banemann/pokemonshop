@@ -54,6 +54,7 @@ const ProductCard = ({ product }) => {
           />
         </div>
         <div className="product-info">
+          <p className="cardgrade">{product.grade}</p>
           <p className="cardcollectionp">{product.collection}</p>
           <h3 className="cardnameh3">{product.cardname}</h3>
           <h3 className="cardprice">{`${product.price.toFixed()} kr.`}</h3>

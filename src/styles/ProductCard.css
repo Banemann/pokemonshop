@@ -131,4 +131,10 @@ color: #1f2d5c;
   cursor: not-allowed; 
 }
 
+.cardgrade{
+  position: absolute;
+  margin-top: -25px;
+  font-size: 16px;
+  font-weight: bold;
+}
 

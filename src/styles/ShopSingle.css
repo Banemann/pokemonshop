@@ -148,6 +148,9 @@
   background-color: #ddd;
 }
 
+.singlegrade{
+  font-weight: bold;
+}
 
 
 @media screen and (max-width: 1100px) {

@@ -90,7 +90,7 @@ const Shop = () => {
     return <p>Error: {error}</p>;
   }
 
-  const collectionName = location.state?.collectionName || "Pokémon Paldea Evolved";
+  const collectionName = location.state?.collectionName || "Alle Pokémon Serier";
 
   return (
   <div className="shoppagediv">
@@ -217,6 +217,7 @@ const Shop = () => {
                   price: product.price,
                   image: product.image_url,
                   collection: product.collection,
+                  grade: product.grade,
                   kortbeskrivelse: product.kortbeskrivelse,
                   beskrivelse: product.beskrivelse,
                   type: product.type,

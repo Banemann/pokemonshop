@@ -52,6 +52,7 @@ const ShopSingle = () => {
           <img src={product.image_url} alt={product.cardname} />
         </div>
         <div className="product-info-single">
+          <p className='singlegrade'>{product.grade}</p>
           <h3 className='singleh3'>{product.collection}</h3>
           <h1 className='singleh1'>{product.cardname}</h1>
           <p>{product.kortbeskrivelse}</p>
