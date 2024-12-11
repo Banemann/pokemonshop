@@ -371,22 +371,21 @@ header .logo img {
 
   .hero-info-div-mobile {
     width:  100%;
-  height: 30px;
+  height: 8vw;
   background: linear-gradient(90deg, #415fc2 21%, #25366d 78%, #1f2d5c);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 8vw;
   }
 
   .hero-info-mobile{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    font-size: 6px;
+    gap: 15px;
+    font-size: 16px;
     color: #FFFFFF;
-    line-height: 8px;
     padding: 0 2%;
   }
   
@@ -395,7 +394,7 @@ header .logo img {
   }
 
   .hero-info-icon-mobile{
-    height: 9px;
+    height: 1.9vw;
   }
 
   .burger-menu {
@@ -411,7 +410,7 @@ header .logo img {
   }
 
   .dropdown-content.show{
-    margin-top: 91px;
+    margin-top: 123px;
     width: 101%;
   }
 
@@ -638,8 +637,24 @@ header .logo img {
   }
   }  
 
+  @media (max-width: 880px) {
+    .hero-info-mobile{
+      font-size: 12px;
+      line-height:16px;
+      gap: 10px;
+  }
+   }  
+
+
+   @media (max-width: 620px) {
+    .hero-info-mobile{
+    font-size: 6px;
+    gap: 5px;
+    line-height: 8px;
+    
+  }
+   
+   }  
   
-
-
 
 
