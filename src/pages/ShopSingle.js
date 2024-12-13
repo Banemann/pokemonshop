@@ -15,7 +15,7 @@ const ShopSingle = () => {
   const handleAddToCart = () => {
     addToCart({
       ...product,
-      image: product.image_url, // Ensure the image property is set correctly
+      image: product.image_url,
     });
   };
 

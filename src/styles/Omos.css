@@ -44,9 +44,7 @@
   padding-top: 20px;
 }
 
-.omvision img{
-  height: 399px;
-  width: 569px;
+.omvision iframe{
   object-fit: cover;
   margin: 50px;
 }

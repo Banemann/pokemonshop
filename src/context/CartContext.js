@@ -1,19 +1,15 @@
 import React, { createContext, useContext, useState } from 'react';
 
-// Create Cart Context
 const CartContext = createContext();
 
-// Cart Provider component
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  // Add item to cart
   const addToCart = (product) => {
     setCart((prevCart) => {
       const itemIndex = prevCart.findIndex((item) => item.id === product.id);
 
       if (itemIndex !== -1) {
-        // If item already exists in cart, increase the quantity by 1
         const updatedCart = [...prevCart];
         updatedCart[itemIndex] = { 
           ...updatedCart[itemIndex], 
@@ -21,18 +17,15 @@ export const CartProvider = ({ children }) => {
         };
         return updatedCart;
       } else {
-        // If item doesn't exist, add it with quantity 1
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
   };
 
-  // Remove item from cart
   const removeFromCart = (id) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
-  // Update item quantity
   const updateQuantity = (id, quantity) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
@@ -41,7 +34,6 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // Calculate total quantity
   const totalQuantity = cart.reduce((acc, product) => acc + product.quantity, 0);
 
   return (
@@ -51,7 +43,6 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use Cart Context
 export const useCart = () => {
   return useContext(CartContext);
 };
