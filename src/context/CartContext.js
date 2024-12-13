@@ -11,9 +11,9 @@ export const CartProvider = ({ children }) => {
 
       if (itemIndex !== -1) {
         const updatedCart = [...prevCart];
-        updatedCart[itemIndex] = { 
-          ...updatedCart[itemIndex], 
-          quantity: updatedCart[itemIndex].quantity + 1 
+        updatedCart[itemIndex] = {
+          ...updatedCart[itemIndex],
+          quantity: updatedCart[itemIndex].quantity + 1,
         };
         return updatedCart;
       } else {
@@ -22,22 +22,24 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  const removeFromCart = (id) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
-  };
-
   const updateQuantity = (id, quantity) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
-      )
-    );
+    if (quantity <= 0) {
+      setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+    } else {
+      setCart((prevCart) =>
+        prevCart.map((item) =>
+          item.id === id ? { ...item, quantity: quantity } : item
+        )
+      );
+    }
   };
 
   const totalQuantity = cart.reduce((acc, product) => acc + product.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cart, totalQuantity, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider
+      value={{ cart, totalQuantity, addToCart, updateQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );
