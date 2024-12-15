@@ -62,7 +62,7 @@ const CartSidebar = ({ isOpen, onClose }) => {
               {total >= freeShippingThreshold ? (
                 <p>Du har opnået <strong>gratis fragt!</strong></p>
               ) : (
-                <p>Køb for <strong>{amountToFreeShipping} kr.</strong>mere og få <strong>gratis fragt</strong></p>
+                <p>Køb for <strong>{amountToFreeShipping} kr.</strong> mere og få <strong>gratis fragt</strong></p>
               )}
               <div className="progress-bar">
                 <div className="progress" style={{ width: `${(total / freeShippingThreshold) * 100}%` }}></div>
