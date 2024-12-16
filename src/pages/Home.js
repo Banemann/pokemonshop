@@ -61,8 +61,8 @@ const Home = () => {
           </p>
         </div>
         <div className="nyhederimagediv">
-          <img src="nyhed1.png" alt="nyhed1" />
-          <img src="nyhed2.png" alt="nyhed2" />
+          <img src="nyhed1.webp" alt="nyhed1" />
+          <img src="nyhed2.webp" alt="nyhed2" />
         </div>
       </div>
 
