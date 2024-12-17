@@ -149,7 +149,7 @@ const Shop = () => {
         <hr />
         <form className="filter-search-bar" onSubmit={handleSearchSubmit}>
           <button type="submit" className="filter-search-button">
-            <img src="searchicon.png" alt="Search" />
+          <img src="/searchicon.png" alt="Search" height="19" width="19" />
           </button>
           <input
             type="text"

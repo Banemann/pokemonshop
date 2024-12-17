@@ -120,7 +120,7 @@ const Header = () => {
           </Link>
           <form className="search-bar" onSubmit={handleSearchSubmit}>
             <button type="submit" className="search-button">
-              <img src="/searchicon.png" alt="Search" />
+              <img src="/searchicon.png" alt="Search" height="19" width="19" />
             </button>
             <input
               type="text"
@@ -175,13 +175,13 @@ const Header = () => {
               <h1>Pokemon TCG serier</h1>
               <div className="ddserier">
                 <Link to={{ pathname: "/shop", search: "?collection=Prismatic Evolutions" }} state={{ collectionName: "Pokémon Prismatic Evolutions" }} onClick={handleLinkClick}>
-                  <img src="/prismatic-serie.svg" alt="Prismatic Evolutions" width="267" />
+                  <img src="/prismatic-serie.svg" alt="Prismatic Evolutions" width="267" height="142" />
                 </Link>
                 <Link to={{ pathname: "/shop", search: "?collection=Surging Sparks" }} state={{ collectionName: "Pokémon Surging Sparks" }} onClick={handleLinkClick}>
-                  <img src="/surging-serie.svg" alt="Surging Sparks" width="267" />
+                  <img src="/surging-serie.svg" alt="Surging Sparks" width="267" height="142" />
                 </Link>
                 <Link to={{ pathname: "/shop", search: "?collection=Stellar Crown" }} state={{ collectionName: "Pokémon Stellar Crown" }} onClick={handleLinkClick}>
-                  <img src="/stellar-serie.svg" alt="Stellar Crown" width="267" />
+                  <img src="/stellar-serie.svg" alt="Stellar Crown" width="267" height="142" />
                 </Link>
               </div>
             </div>
@@ -203,7 +203,7 @@ const Header = () => {
           />
           <div className="hero-info-div">
             <div className="hero-info">
-              <img className="hero-info-icon" alt="" src="fragtikon.svg" height="36"/>
+              <img className="hero-info-icon" alt="" src="fragtikon.svg" height="36" width="55" />
               <div className="hero-info-p">
                 <p>
                   <strong>Gratis fragt</strong>
@@ -212,7 +212,7 @@ const Header = () => {
               </div>
             </div>
             <div className="hero-info">
-              <img className="hero-info-icon" alt="" src="leveringikon.svg" height="36"/>
+              <img className="hero-info-icon" alt="" src="leveringikon.svg" height="36" width="55" />
               <div className="hero-info-p">
                 <p>
                   <strong>Hurtig levering</strong>
@@ -221,7 +221,7 @@ const Header = () => {
               </div>
             </div>
             <div className="hero-info">
-              <img className="hero-info-icon" alt="" src="stjerneikon.svg" height="36"/>
+              <img className="hero-info-icon" alt="" src="stjerneikon.svg" height="36" width="55" />
               <div className="hero-info-p">
                 <p>
                   <strong>4,0 stjerner</strong>
