@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';  
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import '../styles/ProductCard.css';
 
@@ -27,7 +27,9 @@ const ProductCard = ({ product }) => {
     setRotation({ x: 0, y: 0 });
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     addToCart(product);
   };
 
@@ -42,26 +44,26 @@ const ProductCard = ({ product }) => {
           onMouseLeave={product.type === 'Single kort' ? handleMouseLeave : undefined}
         >
           <img
-  src={product.image}
-  alt={product.cardname}
-  className="product-image"
-  width="176"
-  height="246"
-  style={{
-    transform: isHovered
-      ? `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
-      : 'rotateX(0deg) rotateY(0deg)',
-    transition: 'transform 0.1s ease-out',
-  }}
-/>
+            src={product.image}
+            alt={product.cardname}
+            className="product-image"
+            width="176"
+            height="246"
+            style={{
+              transform: isHovered
+                ? `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
+                : 'rotateX(0deg) rotateY(0deg)',
+              transition: 'transform 0.1s ease-out',
+            }}
+          />
         </div>
         <div className="product-info">
-          <p className="cardgrade">{product.grade}</p>
-          <p className="cardcollectionp">{product.collection}</p>
-          <h3 className="cardnameh3">{product.cardname}</h3>
-          <h3 className="cardprice">{`${product.price.toFixed()} kr.`}</h3>
+          <p className="cardgrade" tabIndex="0">{product.grade}</p>
+          <p className="cardcollectionp" tabIndex="0">{product.collection}</p>
+          <h3 className="cardnameh3" tabIndex="0">{product.cardname}</h3>
+          <h3 className="cardprice" tabIndex="0">{`${product.price.toFixed()} kr.`}</h3>
 
-          <div className="stock-indicator">
+          <div className="stock-indicator" tabIndex="0">
             <span
               className={`stock-light ${product.lager > 0 ? 'green' : 'red'}`}
             ></span>
@@ -73,7 +75,8 @@ const ProductCard = ({ product }) => {
       <button
         className={buttonClass}
         onClick={handleAddToCart}
-        disabled={product.lager <= 0}  
+        disabled={product.lager <= 0}
+        aria-label={product.lager > 0 ? 'Tilføj til kurv' : 'Udsolgt'}
       >
         {product.lager > 0 ? 'Tilføj til kurv' : 'Udsolgt'}
       </button>
