@@ -85,7 +85,7 @@ const Home = () => {
     <div className="spotproduct">
       <Link to={`/shop/${spotProduct.id}`}> 
       <div className="spotproductimage">
-        <img src={spotProduct.image_url} alt={spotProduct.cardname} />
+        <img src={spotProduct.image_url} alt={spotProduct.cardname} height={411} width={624}/>
       </div>
       </Link>
       <div className="spotproducttext">

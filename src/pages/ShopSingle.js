@@ -49,7 +49,7 @@ const ShopSingle = () => {
       
       <div className="product-grid-single">
         <div className="image-wrapper-single">
-          <img src={product.image_url} alt={product.cardname} />
+        <img src={product.image_url} alt={product.cardname} width="500" height="700"/>
         </div>
         <div className="product-info-single">
           <p className='singlegrade'>{product.grade}</p>
