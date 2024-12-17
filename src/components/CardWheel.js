@@ -21,8 +21,8 @@ const CardWheel = ({ products }) => {
   return (
     <div className="card-wheel-container">
       <button className="arrow left-arrow" onClick={handlePrevClick} disabled={currentIndex === 0}>
-        <img src="arrow1.svg" alt="left arrow" />
-      </button>
+  <img src="arrow1.svg" alt="left arrow" width="36" height="36" />
+</button>
       <div className="card-wheel">
         {visibleProducts.map((product) => (
           <LazyLoad key={product.id} height={483} offset={100} once>
@@ -36,8 +36,8 @@ const CardWheel = ({ products }) => {
         ))}
       </div>
       <button className="arrow right-arrow" onClick={handleNextClick} disabled={currentIndex >= products.length - cardsToShow}>
-        <img src="arrow2.svg" alt="right arrow" />
-      </button>
+  <img src="arrow2.svg" alt="right arrow" width="36" height="36" />
+</button>
       <div className="scrollbar-container">
         <div className="scrollbar">
           <div

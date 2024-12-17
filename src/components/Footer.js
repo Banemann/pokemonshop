@@ -15,19 +15,17 @@ function Footer() {
           E-mail: <a href="mailto:LSJ@pokemonshop.dk">LSJ@pokemonshop.dk</a>
         </p>
         <div className="social-icons">
-          <a target="_blank"
-          rel="noopener noreferrer" href="https://www.tiktok.com/@pokemonshopdk" aria-label="Facebook">
-            <img src="/facebook.svg" alt="Facebook logo" />
-          </a>
-          <a target="_blank"
-          rel="noopener noreferrer" href="https://www.tiktok.com/@pokemonshopdk" aria-label="Instagram">
-          <img src="/instagram.svg" alt="Instagram logo" />
-          </a>
-          <a target="_blank"
-          rel="noopener noreferrer" href="https://www.tiktok.com/@pokemonshopdk" aria-label="TikTok">
-          <img src="/tiktok.svg" alt="TikTok logo" />
-          </a>
-        </div>
+  <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@pokemonshopdk" aria-label="Facebook">
+    <img src="/facebook.svg" alt="Facebook logo" width="32" height="32" />
+  </a>
+  <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@pokemonshopdk" aria-label="Instagram">
+    <img src="/instagram.svg" alt="Instagram logo" width="32" height="32" />
+  </a>
+  <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@pokemonshopdk" aria-label="TikTok">
+    <img src="/tiktok.svg" alt="TikTok logo" width="32" height="32" />
+  </a>
+</div>
+
       </div>
       <div className="footer-section">
         <h3>Kundeservice:</h3>
@@ -50,8 +48,8 @@ function Footer() {
         </form>
       </div>
       <div className="footer-logo">
-        <img src="/logo.svg" alt="Pokémon Shop Logo" />
-      </div>
+  <img src="/logo.svg" alt="Pokémon Shop Logo" width="231" height="78" />
+</div>
     </footer>
   );
 }

@@ -5,7 +5,7 @@ function TiktokCTA() {
   return ( 
   <div className="ctadiv">
     <div className="cta">
-      <img src="maskot.svg" alt="cta1" />
+    <img src="maskot.svg" alt="cta1" width="359.17" height="490.87" />
       <div className="ctatext">
         <h2>Hold dig opdateret med Pokémon Shop</h2>
         <p>
@@ -26,7 +26,7 @@ function TiktokCTA() {
           rel="noopener noreferrer"
         >
           Besøg TikTok
-          <img src="tiktoklogo.svg" alt="TikTok Logo" />
+          <img src="tiktoklogo.svg" alt="TikTok Logo" width="27" height="27" />
         </a>
       </div>
     </div>

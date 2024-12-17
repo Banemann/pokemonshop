@@ -42,16 +42,18 @@ const ProductCard = ({ product }) => {
           onMouseLeave={product.type === 'Single kort' ? handleMouseLeave : undefined}
         >
           <img
-            src={product.image}
-            alt={product.cardname}
-            className="product-image"
-            style={{
-              transform: isHovered
-                ? `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
-                : 'rotateX(0deg) rotateY(0deg)',
-              transition: 'transform 0.1s ease-out',
-            }}
-          />
+  src={product.image}
+  alt={product.cardname}
+  className="product-image"
+  width="176"
+  height="246"
+  style={{
+    transform: isHovered
+      ? `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
+      : 'rotateX(0deg) rotateY(0deg)',
+    transition: 'transform 0.1s ease-out',
+  }}
+/>
         </div>
         <div className="product-info">
           <p className="cardgrade">{product.grade}</p>
