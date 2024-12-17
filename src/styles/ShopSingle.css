@@ -22,8 +22,9 @@
 }
 
 .image-wrapper-single img {
-  max-width: 100%;
+  max-width: 550px;
   height: auto;
+  max-height: 400px;
   border-radius: 8px;
 }
 

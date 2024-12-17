@@ -61,8 +61,8 @@ const Home = () => {
           </p>
         </div>
         <div className="nyhederimagediv">
-          <img src="info1.webp" alt="nyhed1" />
-          <img src="info2.webp" alt="nyhed2" />
+        <img src="info1.webp" alt="nyhed1" width="567" height="633.64" />
+        <img src="info2.webp" alt="nyhed2" width="567" height="633.64" />
         </div>
       </div>
 
@@ -85,7 +85,7 @@ const Home = () => {
     <div className="spotproduct">
       <Link to={`/shop/${spotProduct.id}`}> 
       <div className="spotproductimage">
-        <img src={spotProduct.image_url} alt={spotProduct.cardname} height={411} width={624}/>
+        <img src={spotProduct.image_url} alt={spotProduct.cardname} height="411" width="624"/>
       </div>
       </Link>
       <div className="spotproducttext">
