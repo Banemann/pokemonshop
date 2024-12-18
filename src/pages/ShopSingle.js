@@ -79,9 +79,6 @@ const ShopSingle = () => {
           <p>{product.indhold}</p>
         </div>
       </div>
-
-     
-      <button className="back-btn-single" onClick={() => navigate(-1)}>Tilbage</button>
     </div>
   );
 };
