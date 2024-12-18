@@ -49,96 +49,72 @@
   margin: 50px;
 }
 
-@media (max-width: 1024px) {
-  .omherosection img {
-    height: 40vh; 
-  }
+.omvision .iframe2{
+  object-fit: cover;
+  margin: 50px;
+  display: none;
+}
 
-  .omherosection h1 {
-    font-size: 36px; 
-    margin: 30px auto;
+@media (max-width: 1024px) {
+  .omherosection {
+    display: none; 
   }
 
   .omvision {
     flex-direction: column; 
     align-items: center;
-    padding-top: 80px; 
-    gap: 30px; 
     height: auto; 
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .omvisiontext {
-    max-width: 100%; 
+    max-width: 85%; 
     text-align: center;
     padding: 0 20px;
-    font-size: 16px; 
+    font-size: 14px;
   }
 
-  .omvisiontext h2 {
-    font-size: 30px; 
+  .opentiderdiv{
+    background-color: #1f2d5c;
+    color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    line-height: 2;
   }
 
-  .omvision img {
-    width: 80%; 
-    height: auto; 
+  .opentider {
+    font-size: 28px; 
+  }
+
+  .omvision .iframe2 { 
+    width: 80%;
     margin: 0; 
+    display: block;
+    margin-top: 90px;
   }
+
+  .omvision iframe {
+    display: none;
+  } 
+
 }
 
 @media (max-width: 768px) {
-  .omherosection img {
-    height: 35vh; 
-  }
 
   .omherosection h1 {
-    font-size: 28px; 
+    font-size: 35px; 
     margin: 20px auto;
   }
 
   .omvisiontext {
-    font-size: 14px; 
     line-height: 1.4; 
     padding: 0 15px;
   }
 
   .omvisiontext h2 {
     font-size: 26px; 
-  }
-
-  .omvision img {
-    width: 90%; 
-  }
-}
-
-@media (max-width: 480px) {
-  .omherosection img {
-    height: 30vh; 
-  }
-
-  .omherosection h1 {
-    font-size: 24px; 
-    margin: 15px auto;
-    text-align: center; 
-  }
-
-  .omvision {
-    padding-top: 40px; 
-    gap: 20px; 
-  }
-
-  .omvisiontext {
-    font-size: 12px; 
-    line-height: 1.3;
-    text-align: left;
-  }
-
-  .omvisiontext h2 {
-    font-size: 22px; 
-  }
-
-  .omvision img {
-    width: 100%; 
-    margin: 0 auto; 
   }
 }
 

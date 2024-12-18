@@ -14,6 +14,16 @@ function Omos() {
       </div>
 
       <div className="omvision">
+      <iframe className="iframe2"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/9JeqjJW7kzA?controls=0&rel=0&modestbranding=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
         <div className="omvisiontext">
           <h2 className="omh2">Visionen bag Pokémon Shop</h2>
           <p className="omp">
@@ -29,15 +39,15 @@ function Omos() {
             et væld af tilbehør. Uanset om du er en erfaren samler eller ny i
             Pokémon-verdenen, har vi alt, hvad du behøver.
             <br />
-            <br /> <strong> Åbningstider i butikken: </strong>
+            <br /> <div className="opentiderdiv"> <strong className="opentider"> Åbningstider i butikken: </strong>
             <br />
             Tirsdag kl. 12-17 <br />
             Torsdag kl. 12-17 <br />
             Fredag kl. 12-17 <br />
-            Lørdag kl. 10-15
+            Lørdag kl. 10-15</div>
           </p>
         </div>
-        <iframe
+        <iframe className="iframe1"
           width="560"
           height="315"
           src="https://www.youtube.com/embed/9JeqjJW7kzA?controls=0&rel=0&modestbranding=1"
