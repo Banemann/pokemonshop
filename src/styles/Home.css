@@ -1,6 +1,6 @@
 .homediv {
   margin: 0 auto;
-  margin-top: 720px;
+  margin-top: 97vh;
   padding: 0;
 }
 
@@ -133,11 +133,9 @@
 }
 
 
-
-
 @media (max-width: 1160px) {
   .homediv {
-    margin-top: 42vh;
+    margin-top: 19vh;
     padding: 0 20px;
   }
 
@@ -246,9 +244,10 @@
     
   }
 }
+
 @media (max-width: 700px) {
   .homediv {
-    margin-top: 37vh;
+    margin-top: 23vh;
   }
 }
 
