@@ -143,6 +143,10 @@
     grid-template-columns: 1fr; 
   }
 
+  .product-detail-single {
+    margin-bottom: 0;
+  }
+
   .product-detail-single p{
     font-size: 14px;
   }
