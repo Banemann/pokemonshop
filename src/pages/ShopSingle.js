@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import supabase from '../supabase';
 import { useCart } from '../context/CartContext';
 import '../styles/ShopSingle.css';
 
 const ShopSingle = () => {
   const { productId } = useParams();
-  const navigate = useNavigate();
   const { addToCart } = useCart();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
