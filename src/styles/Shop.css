@@ -169,8 +169,8 @@ input[type="checkbox"]:checked {
 .filter-toggle-button {
   display: none;
   margin: 15px auto;
-  width: 40vw;
-  height: 8vh;
+  width: 30vw;
+  height: 6vh;
   background-color: #1f2d5c;
   color: white;
   border: none;
@@ -231,13 +231,13 @@ input[type="checkbox"]:checked {
   .shoppagediv{
     padding: 5%;
   }
-  }
 
-@media (max-width: 750px) {
-  .shoppagediv{
-    margin-top: 120px;
+  .shoppagediv h1{
+    font-size: 35px;
   }
 }
+
+
 
 
 
