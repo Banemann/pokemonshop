@@ -143,4 +143,11 @@
     -webkit-overflow-scrolling: touch; 
   }
 
+  .scrollbar-thumb {
+    display: none;
+  }
+
+  .scrollbar-container {
+    display: none;
+  }
 }
