@@ -83,7 +83,7 @@ const Shop = () => {
   });
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   if (error) {

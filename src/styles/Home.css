@@ -132,6 +132,14 @@
   border: 1px solid #fff;
 }
 
+.loading{
+  text-align: center;
+  font-size: 35px;
+  color: #1F2D5C;
+  z-index: 1002;
+  margin-top: 40vh;
+}
+
 
 @media (max-width: 1160px) {
   .homediv {
