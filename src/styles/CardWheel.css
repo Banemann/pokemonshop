@@ -102,10 +102,7 @@
     min-width: 200px; 
   }
 
-  .left-arrow,
-  .right-arrow {
-    display: none; 
-  }
+ 
 }
 
 @media (max-width: 768px) {
@@ -131,10 +128,7 @@
 }
 
 @media (max-width: 1400px) {
-  .left-arrow,
-  .right-arrow {
-    display: none; 
-  }
+
 
   .card-wheel {
     display: flex;
@@ -150,4 +144,14 @@
   .scrollbar-container {
     display: none;
   }
+
+  .left-arrow {
+    left: -30px;
+  }
+  
+  .right-arrow {
+    right: -30px;
+  }
+
+  
 }
