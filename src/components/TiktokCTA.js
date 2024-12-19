@@ -5,7 +5,7 @@ function TiktokCTA() {
   return ( 
   <div className="ctadiv">
     <div className="cta">
-    <img src="maskot.svg" alt="cta1" width="359.17" height="490.87" />
+    <img className='maskot1' src="maskot.svg" alt="Pokemonshop Maskot" width="359.17" height="490.87" />
       <div className="ctatext">
         <h2>Hold dig opdateret med Pokémon Shop</h2>
         <p>
@@ -29,6 +29,7 @@ function TiktokCTA() {
           <img src="tiktoklogo.svg" alt="TikTok Logo" width="27" height="27" />
         </a>
       </div>
+      <img className="maskot2" src="maskot.svg" alt="Pokemonshop Maskot" width="359.17" height="490.87" />
     </div>
   </div>
   );
